@@ -6,12 +6,10 @@ import '../styles/components/button.scss'; // import styles in each component
  * @param {{name:string}} props
  * @returns {string}
  */
-const Button = ({ name }) => `
+function Button({ name }) {
+  return `
     <button class="btn">${name}</button>
   `;
-
-function Button({ name }) {
-  return;
 }
 
 export default Button; // exports the function as default
