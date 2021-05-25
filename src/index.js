@@ -1,4 +1,4 @@
 import './styles/main.scss';
-import Buttons from './components/buttons';
+import Button from './components/button';
 
-document.body.innerHTML = Buttons();
+document.body.innerHTML = Button({ name: 'Button' });

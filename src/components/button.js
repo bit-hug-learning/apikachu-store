@@ -1,8 +1,7 @@
 import '../styles/components/button.scss'; // import styles in each component
 
 /**
- * A component should return an string with the html
- * it can receive props, recomend to pass it in an object and using destructure in the params
+ * A component should return a string with the html
  *
  * @param {{name:string}} props
  * @returns {string}
