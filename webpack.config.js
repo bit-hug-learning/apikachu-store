@@ -33,6 +33,10 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        type: 'asset',
+        test: /\.(svg|png|jpeg|jpg|gif)$/i
+      }
     ],
   },
 };
