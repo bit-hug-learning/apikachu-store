@@ -8,7 +8,7 @@ import '../styles/components/button.scss'; // import styles in each component
  */
 function Button({ name }) {
   return `
-    <button class="btn">${name}</button>
+    <button>${name}</button>
   `;
 }
 
