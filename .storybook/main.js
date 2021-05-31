@@ -18,6 +18,11 @@ module.exports = {
       include: path.resolve(__dirname, '../'),
     });
 
+    config.module.rules.push({
+      type: 'asset',
+      test: /\.(svg|png|jpeg|jpg|gif)$/i,
+    });
+
     // Return the altered config
     return config;
   },
