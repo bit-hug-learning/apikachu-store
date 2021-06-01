@@ -1,16 +1,10 @@
-import '../styles/components/footer.scss'
-import YoutubeIcon from '../assets/icons/youtube.png'
-import GithubIcon from '../assets/icons/github.png'
-import TwitterIcon from '../assets/icons/twitter.png'
-/**
- * A component should return a string with the html
- *
- * @param {{name:string}} 
- * @returns {string}
- */
+import '../styles/components/footer.scss';
+import YoutubeIcon from '../assets/icons/youtube.png';
+import GithubIcon from '../assets/icons/github.png';
+import TwitterIcon from '../assets/icons/twitter.png';
 
-function Footer({storeLogo = '', usLogo = ''}){
-    return `
+function Footer({ storeLogo = '', usLogo = '' }) {
+  return `
     <footer class='footer'>
         <a href='#home' class="footer__logo">
             <img src="${storeLogo}" alt="Apikachu Store"/>
@@ -26,7 +20,6 @@ function Footer({storeLogo = '', usLogo = ''}){
                 <img src=${usLogo} alt="BitHug" />
             </div>
         </div>
- 
         <div class="footer__social">
             <a href='#' class='footer__social-circle'><img src=${YoutubeIcon} alt=""/></a>
             <a href='#' class='footer__social-circle'><img src=${GithubIcon} alt=""/></a>
@@ -34,7 +27,7 @@ function Footer({storeLogo = '', usLogo = ''}){
         </div>
         <hr class='footer__line'/>
     </foooter>
-    `
+    `;
 }
 
-export default Footer
+export default Footer;
