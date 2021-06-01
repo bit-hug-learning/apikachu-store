@@ -1,3 +1,4 @@
 import './styles/main.scss';
+import Footer from './components/Footer';
 
-document.body.innerHTML = ``;
+document.body.innerHTML = Footer({});
