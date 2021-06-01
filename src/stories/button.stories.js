@@ -1,6 +1,11 @@
-const Button = ({ className }) => {
+import { main } from './Footer.stories';
+
+const Button = ({ className, big, disabled }) => {
   return `
-    <button class="${className}">Button</button>
+    <button class="${className} ${big ? ' btn--big' : ''}" 
+    ${disabled ? 'disabled' : ''}>
+      Button
+    </button>
   `;
 };
 
@@ -8,6 +13,8 @@ export default {
   title: 'General/Button',
   argTypes: {
     className: { control: 'text' },
+    big: { control: 'boolean' },
+    disabled: { control: 'boolean' },
   },
 };
 
@@ -24,4 +31,16 @@ Primary.args = {
 export const Buy = Button.bind({});
 Buy.args = {
   className: 'btn btn--buy',
+};
+
+export const Big = Button.bind({}); // this line makes a copy of the "Button" function
+Big.args = {
+  className: 'btn btn--primary btn--big',
+  big: true,
+};
+
+export const Disabled = Button.bind({}); // this line makes a copy of the "Button" function
+Disabled.args = {
+  className: 'btn btn--primary',
+  disabled: true,
 };
