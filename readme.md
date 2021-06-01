@@ -1,3 +1,5 @@
+<img src="./src/assets/images/apikachuStoreLogo.png" alt="Apikachu logo" align="right">
+
 # Apikachu store
 
 - [Installation and usage](#installation-and-usage)
