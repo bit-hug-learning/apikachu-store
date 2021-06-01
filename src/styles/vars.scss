@@ -1,3 +1,48 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
 :root {
+  --color-primary: #1492E6;
+  --color-primary-10: #E8F4FD;
+  --color-primary-20: #D0E9FA;
+  --color-primary-30: #B9DEF8;
+  --color-primary-40: #A1D3F5;
+  --color-primary-50: #8AC9F3;
+  --color-primary-60: #72BEF0;
+  --color-primary-70: #5BB3EE;
+  --color-primary-80: #43A8EB;
+  --color-primary-90: #2C9DE9;
+
+  --color-black: #25282B;
+  --color-black-5: #F9F9FA;
+  --color-black-10: #E8E8E8;
+  --color-black-20: #DBDDE0;
+  --color-black-40: #CACCCF;
+  --color-black-60: #A0A4A8;
+  --color-black-80: #52575C;
+
+  --color-white: #fff;
+  --color-yellow: #F6CF06;
+  --color-pokedex: #E84848;
+
+  --color-warning: #F6A609;
+  --color-warning-light: #FFBC1F;
+  --color-warning-dark: #E89806;
+  --color-positive: #2AC769;
+  --color-positive-dark: #1AB759;
+  --color-positive-light: #40DD7F;
+  --color-negative: #FB4E4E;
+  --color-negative-dark: #E93C3C;
+  --color-negative-light: #FF6262;
   
+  // pokemon bg types
+  --color-type-gray: #9099A1;
+  --color-type-green: #CFECBE;
+  --color-type-yellow: #FBF2C4;
+  --color-type-red: #FCE0DD;
+  --color-type-blue: #E0EFFF;
+  --color-type-purple: #F1D2FF;
+
+
+  --font-family-montserrat: 'Montserrat', sans-serif;
 }

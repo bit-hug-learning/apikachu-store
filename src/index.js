@@ -1,4 +1,4 @@
 import './styles/main.scss';
-import Button from './components/button';
+import Footer from './components/Footer';
 
-document.body.innerHTML = Button({ name: 'Button' });
+document.body.innerHTML = Footer({});
