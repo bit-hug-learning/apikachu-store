@@ -75,7 +75,7 @@ There are a set of rules to keep in mind:
 
 ## 3. Documentation
 
-- Comment your code. Try to make it as clear as possible what you are intending with each major section.
+- Comment your code. Try to make it as clear as possible.
 - Don't use comments as an excuse for a bad code. Keep your code clean.
 - Don't use clean code as an excuse to not comment at all.
 - Keep comments relevant as your code evolves.
