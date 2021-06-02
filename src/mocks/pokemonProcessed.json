@@ -1,0 +1,41 @@
+{
+  "height": 3,
+  "id": 132,
+  "name": "ditto",
+  "image":  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg",
+
+  "stats": [
+    {
+      "name": "hp",
+      "base_stat": 48
+    },
+    {
+      "name": "attack",
+      "base_stat": 48
+    },
+    {
+      "name": "defense",
+      "base_stat": 48
+    },
+    {
+      "base_stat": 48,
+      "name": "special-attack"
+    },
+    {
+      "base_stat": 48,
+      "name": "special-defense"
+    },
+    {
+      "base_stat": 48,
+      "name": "speed"
+    }
+  ],
+  "types": [
+    {
+      "name": "normal",
+      "image": "normalImg",
+      "color": "var(--color-type-gray)"
+    }
+  ],
+  "weight": 40
+}
