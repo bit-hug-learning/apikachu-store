@@ -10,6 +10,11 @@ module.exports = {
       template: 'src/index.html',
     }),
   ],
+  devServer: {
+    historyApiFallback: {
+      index: 'build/index.html',
+    },
+  },
   module: {
     rules: [
       {
@@ -32,6 +37,10 @@ module.exports = {
           // Compiles Sass to CSS
           'sass-loader',
         ],
+      },
+      {
+        type: 'asset',
+        test: /\.(svg|png|jpeg|jpg|gif)$/i,
       },
     ],
   },
