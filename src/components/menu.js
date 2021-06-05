@@ -1,9 +1,10 @@
 import "../styles/components/menu.scss";
+import ApikachuLogo from "../assets/images/apikachuStoreLogo.png";
 import UserIcon from "../assets/icons/user_icon.svg";
 import WishIcon from "../assets/icons/wish_icon.svg";
 import BagIcon from "../assets/icons/bag_icon.svg";
 import VectorIcon from "../assets/icons/Vector.svg";
-/**
+/*
  * A component should return a string with the html
  *
  * @param {{number:int}} props
@@ -12,8 +13,8 @@ import VectorIcon from "../assets/icons/Vector.svg";
 
 function Menu({ number }) {
   return `
-  <header>
-    <img src="../assets/images/apikachuStoreLogo.png" />
+  <header class="header">
+    <img src=${ApikachuLogo} alt="Logo" />
     <nav>
       <ul>
         <li><span><img src=${UserIcon} alt="User icon" /></span><a href="#">Sign In | Sign Up</a></li>

@@ -1,4 +1,6 @@
-import './styles/main.scss';
-import Footer from './components/Footer';
+import "./styles/main.scss";
+import Menu from "./components/menu";
+import Footer from "./components/Footer";
 
-document.body.innerHTML = Footer({});
+document.body.innerHTML = Menu({});
+document.body.innerHTML += Footer({});
