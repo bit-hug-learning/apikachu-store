@@ -6,5 +6,6 @@ export default {
 };
 
 export const Main = Detail.bind({});
-
 Main.args = { ...pokemonData };
+
+export const Second = Detail.bind({});
