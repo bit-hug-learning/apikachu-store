@@ -5,6 +5,7 @@ function Stats(stats) {
     .map((stat) => `<div>${stat.name} ${stat.base_stat}<div>`)
     .join('');
 }
+
 function Detail({ image, id, name, types = [], stats } = {}) {
   return /*html*/ `
     <img src=${pokedexTop}/>
