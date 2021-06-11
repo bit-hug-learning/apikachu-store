@@ -31,10 +31,7 @@
     }
   ],
   "types": [
-    {
-      "name": "normal",
-      "image": "normalImg",
-      "color": "var(--color-type-gray)"
-    }
+    "grass",
+    "dragon"
   ]
 }

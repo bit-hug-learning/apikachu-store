@@ -1,8 +1,9 @@
 .pokedex {
 
-  img {
+  &__top, &__right, &__hinge, &__bottom {
     width: 100%;
   }
+
   &__content-1, &__content-2{
     background-color: var(--color-pokedex);
     border-left: 3px solid #000;

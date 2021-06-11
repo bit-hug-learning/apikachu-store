@@ -4,6 +4,7 @@ import pokedexBottom from '../assets/images/pokedex_bottom.svg';
 import pokedexRight from '../assets/images/pokedex_right.svg';
 import pokedexHinge from '../assets/images/pokedex_hinge.svg';
 import leftArrow from '../assets/icons/leftArrow.svg';
+import pokemonTypes from '../pokemonTypes';
 
 function Stats(stats) {
   return stats
@@ -12,7 +13,7 @@ function Stats(stats) {
 }
 
 function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
-  return /* html */ `
+  return /*html*/ `
     <div class="pokedex">
       <img class="pokedex__top" src=${pokedexTop} />
       <div class="pokedex__content-1">
@@ -37,10 +38,15 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
         <img class="pokedex__right" src=${pokedexRight} />
         <div class="pokedex__types">
           Type
-          <img src="${types[0]?.image}" alt="${types[0]?.name}" />
+          <img
+            src="${pokemonTypes[types[0]].image}"
+            alt="${pokemonTypes[types[0]].name}"
+          />
           ${
             types[1]
-              ? `<img src="${types[1]?.image}" alt="${types[1]?.name}" />`
+              ? `<img src="${pokemonTypes[types[1]].image}" alt="${
+                  pokemonTypes[types[1]].name
+                }" />`
               : ''
           }
         </div>
