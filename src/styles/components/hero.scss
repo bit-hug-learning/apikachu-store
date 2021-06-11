@@ -1,0 +1,55 @@
+.hero {
+  background-color: var(--color-yellow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__image {
+    margin-bottom: 2rem;
+    picture {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    padding: 0 1rem;
+
+    p{
+      margin: 0;
+    }
+
+    h1{
+      margin: 0;
+      font-size: 3.4rem;
+      color: #fff;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+
+    * {
+      margin-right: 1rem;
+    }
+  }
+
+
+  @media (min-width:768px) {
+    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: center;
+
+    &__image, &__cta {
+      margin: 0;
+    }
+
+    &__title {
+      h1{
+        font-size: 4.6rem;
+      }
+    }
+  }
+}
