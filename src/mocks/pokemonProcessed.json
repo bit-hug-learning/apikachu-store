@@ -2,8 +2,8 @@
   "id": 132,
   "name": "ditto",
   "height": 3,
-  "weight": 40,
-  "image":  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg",
+  "weight": 69,
+  "image":  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
   "stats": [
     {
       "name": "hp",
