@@ -17,17 +17,26 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
     <div class="pokedex">
       <img class="pokedex__top" src=${pokedexTop} />
       <div class="pokedex__content-1">
-        <div class="pokedex__image">
-          <img src="${image}" alt="" />
+        <div class="pokedex__frame-container">
+          <div class="pokedex__image">
+            <img src="${image}" alt="" />
+          </div>
         </div>
-        <div class="pokedex__name">
-          <h2>#${id} ${name}</h2>
+        
+        <div class="pokedex__frame-container">
+          <div class="pokedex__name">
+            <h2>#${id} ${name}</h2>
+          </div>
         </div>
+
         <div class="pokedex__buttons">
           <button>
             <img src="${leftArrow}" alt="" />
           </button>
-          <div class="pokedex__price">$${weight / 10}</div>
+          <div class="pokedex__frame-container">
+            <div class="pokedex__price">$${weight / 10}</div>
+          </div>
+
           <button>
             <img src="${leftArrow}" alt="" />
           </button>

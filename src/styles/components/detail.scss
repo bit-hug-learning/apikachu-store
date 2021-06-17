@@ -6,13 +6,38 @@
 
   &__content-1, &__content-2{
     background-color: var(--color-pokedex);
-    border-left: 3px solid #000;
-    border-right: 3px solid #000;
+    border-left: 6px solid #742424;
+    border-right: 6px solid #742424;
   }
 
   &__content-1 {
-    padding-top:3rem;
-    margin-top: -3rem;
+    padding-top:4rem;
+    margin-top: -4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+  }
+  &__frame-container {
+    width: 86%;
+    // height: 53%;
+    margin: 9%;
+    background-color: #bfbfbf;
+    border: 3px solid black;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__image {
+    text-align: center;
+    width: calc(100% - 16px);
+    padding: 12% 0;
+    margin: 5%;
+    background-color: var(--color-type-green);
+  }
+  &__image img{
+    width: 40%;
+    // padding: 1% 0;
   }
 
   &__content-2{
