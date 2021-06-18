@@ -5,7 +5,7 @@ import WishIcon from "../assets/icons/wish_icon.svg";
 import BagIcon from "../assets/icons/bag_icon.svg";
 import VectorIcon from "../assets/icons/Vector.svg";
 import HamburgerIcon from "../assets/icons/hamburger.svg";
-/*
+/**
  * A component should return a string with the html
  *
  * @param {{number:int}} props
