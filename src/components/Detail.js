@@ -23,7 +23,7 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
           </div>
         </div>
         
-        <div class="pokedex__frame-container">
+        <div class="pokedex__frame-container name">
           <div class="pokedex__name">
             <h2>#${id} ${name}</h2>
           </div>
@@ -36,7 +36,6 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
           <div class="pokedex__frame-container">
             <div class="pokedex__price">$${weight / 10}</div>
           </div>
-
           <button>
             <img src="${leftArrow}" alt="" />
           </button>
@@ -45,25 +44,33 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
       <img class="pokedex__hinge" src=${pokedexHinge} />
       <div class="pokedex__content-2">
         <img class="pokedex__right" src=${pokedexRight} />
-        <div class="pokedex__types">
-          Type
-          <img
-            src="${pokemonTypes[types[0]].image}"
-            alt="${pokemonTypes[types[0]].name}"
-          />
-          ${
-            types[1]
-              ? `<img src="${pokemonTypes[types[1]].image}" alt="${
-                  pokemonTypes[types[1]].name
-                }" />`
-              : ''
-          }
+        <div class="pokedex__frame-container type">
+          <div class="pokedex__types">
+            Type
+            <img
+              src="${pokemonTypes[types[0]].image}"
+              alt="${pokemonTypes[types[0]].name}"
+            />
+            ${
+              types[1]
+                ? `<img src="${pokemonTypes[types[1]].image}" alt="${
+                    pokemonTypes[types[1]].name
+                  }" />`
+                : ''
+            }
+          </div>
         </div>
-        <div class="pokedex__stats">
-          <p>Stats</p>
-          <div>${Stats(stats)}</div>
-          <div>Weight: ${weight} Height: ${height}</div>
+
+        <div class="pokedex__frame-container stat">
+          <div class="pokedex__stats">
+            <p>Stats</p>
+            <div class="pokedex__stats-data">
+              <div class="pokedex__stats-left">${Stats(stats)}</div>
+              <div class="pokedex__stats-right"><div>Weight: ${weight}</div> <div>Height: ${height}</div></div>
+            </div>
+          </div>
         </div>
+  
       </div>
       <img class="pokedex__bottom" src=${pokedexBottom} />
     </div>
