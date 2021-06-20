@@ -42,15 +42,21 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
           </div>
 
           <div class="pokedex__buttons">
+           
             <button>
               <img src="${leftArrow}" alt="" />
+              <div class="pokedex__container-buttons">
+              </div>
             </button>
             <div class="pokedex__frame-container">
               <div class="pokedex__price">$ ${weight / 100}</div>
             </div>
             <button>
               <img src="${leftArrow}" alt="" />
+              <div class="pokedex__container-buttons">
+              </div>
             </button>
+
           </div>
         </div>
         <img class="pokedex__hinge" src=${pokedexHinge} />
