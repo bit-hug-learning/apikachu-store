@@ -1,5 +1,3 @@
-import { main } from './Footer.stories';
-
 const Button = ({ className, big, disabled }) => {
   return `
     <button class="${className} ${big ? ' btn--big' : ''}" 
@@ -18,12 +16,12 @@ export default {
   },
 };
 
-export const Default = Button.bind({}); // this line makes a copy of the "Button" function
+export const Default = Button.bind({});
 Default.args = {
   className: 'btn',
 };
 
-export const Primary = Button.bind({}); // this line makes a copy of the "Button" function
+export const Primary = Button.bind({});
 Primary.args = {
   className: 'btn btn--primary',
 };
@@ -33,13 +31,13 @@ Buy.args = {
   className: 'btn btn--buy',
 };
 
-export const Big = Button.bind({}); // this line makes a copy of the "Button" function
+export const Big = Button.bind({});
 Big.args = {
   className: 'btn btn--primary btn--big',
   big: true,
 };
 
-export const Disabled = Button.bind({}); // this line makes a copy of the "Button" function
+export const Disabled = Button.bind({});
 Disabled.args = {
   className: 'btn btn--primary',
   disabled: true,
