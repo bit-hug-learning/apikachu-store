@@ -1,12 +1,18 @@
 @import '../../../node_modules/@yaireo/ui-range/ui-range.scss';
+@import url(../vars.scss);
 
 .filter{
+    position: relative;
+    width: 300px;
+    &__icon{display: none;}
+}
+.form{
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 100%;
-    padding: 1.5em;
-    border-right: 1px solid #E8E8E8;
+    justify-content: center;
+    width: 100%;
+    padding: 0 1.5em;
+    border-right: 1px solid var(--color-black-10);
 
     fieldset{border: none;}
 
@@ -18,7 +24,8 @@
     &__price{
         display: flex;
         flex-direction: column;
-
+        
+        .range-slider{margin: .5em 0;}
         .range-slider > input + output::after{
             display:none;
             z-index: 0;
@@ -27,16 +34,16 @@
             display:inherit;
         }
 
-        &-numbers{
+        &-input{
             display: flex;
             justify-content: space-around;
             align-items: center;
-            margin-top: .5em;
+            margin-top: 1em;
             width: 100%;
         }
         hr{
             width: 1em;
-            border: 1px solid rgba($color: #000000, $alpha: 0.3);
+            border: 1px solid var(--color-black-20);
         }
         input[type="number"]{
             width: 6.5em;
@@ -44,7 +51,8 @@
             padding: .5em;
             border-radius: 5px;
             outline: none;
-            border: 1px solid rgba($color: #000000, $alpha: 0.3)
+            border: 1px solid var(--color-black-20);
+            color: var(--color-black-80);
         }
     }
 
@@ -69,5 +77,20 @@
             border: none !important;
             
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .form{display: none}
+    .form-visible{
+        position: absolute;
+        display: flex;
+        left: 25px;
+        top: 0;
+
+    }
+    .filter__icon{
+        display: flex;
+        cursor: pointer;
     }
 }
