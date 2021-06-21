@@ -45,7 +45,7 @@ body, html {
   align-items: center;
   padding: 12px 24px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.2px;
   text-transform: uppercase;
   background: none;
@@ -70,8 +70,8 @@ body, html {
   }
 
   &--big {
-    font-size: 14px;
     padding: 18px 36px;
+    font-size: 13px;
   }
 
   &:disabled {
