@@ -1,12 +1,6 @@
-import './styles/main.scss';
-import Footer from './components/Footer';
-import { getPokemonByRange } from './utils/fetchData';
+import "./styles/main.scss";
+import Menu from "./components/menu";
+import Footer from "./components/Footer";
 
-document.body.innerHTML = Footer({});
-
-async function a() {
-  const s = await getPokemonByRange(1, 4);
-  console.log(s);
-}
-
-a();
+document.body.innerHTML = Menu({});
+document.body.innerHTML += Footer({});
