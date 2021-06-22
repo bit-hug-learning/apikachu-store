@@ -1,4 +1,5 @@
 import '../styles/components/detail.scss';
+import '../styles/components/button.scss';
 import pokedexTop from '../assets/images/pokedex_top.svg';
 import pokedexBottom from '../assets/images/pokedex_bottom.svg';
 import pokedexRight from '../assets/images/pokedex_right.svg';
@@ -6,7 +7,18 @@ import pokedexHinge from '../assets/images/pokedex_hinge.svg';
 import pokedexHingeV from '../assets/images/pokedex_hinge-v.svg';
 import leftArrow from '../assets/icons/leftArrow.svg';
 import pokemonTypes from '../pokemonTypes';
+import pokeball from '../assets/images/pokeball.png';
 
+
+
+function Button( textButton, className, big, disabled ) {
+  return `
+  <button class="${className} ${big ? ' btn--big' : ''}" 
+  ${disabled ? 'disabled' : ''}>
+    ${textButton == `Shop now` ? `${textButton}<img class="pokeball" src="${pokeball}"/>` : textButton}
+  </button>
+`;
+}
 
 function Stats(stats) {
   return stats
@@ -95,6 +107,12 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
         <img class="pokedex__bottom" src=${pokedexBottom} />
       </div>        
     </div>
+
+    <div class="buttons">
+       ${Button("Add to cart", "btn btn--add", true)}
+       ${Button("Shop now", "btn btn--shop-detail", true)}
+    </div>
+
   `;
 }
 
