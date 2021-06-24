@@ -37,12 +37,6 @@ Add.args = {
   className: 'btn btn--add',
 };
 
-export const ShopDetail = Button.bind({});
-ShopDetail.args = {
-  textButton: "Shop now",
-  className: 'btn btn--shop-detail',
-};
-
 export const Big = Button.bind({});
 Big.args = {
   className: 'btn btn--primary btn--big',
