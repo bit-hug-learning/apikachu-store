@@ -1,8 +1,8 @@
-const Button = ({ className, big, disabled }) => {
+const Button = ({ textButton = "Button", className, big, disabled }) => {
   return `
     <button class="${className} ${big ? ' btn--big' : ''}" 
     ${disabled ? 'disabled' : ''}>
-      Button
+      ${textButton} 
     </button>
   `;
 };
@@ -29,6 +29,12 @@ Primary.args = {
 export const Buy = Button.bind({});
 Buy.args = {
   className: 'btn btn--buy',
+};
+
+export const Add = Button.bind({});
+Add.args = {
+  textButton: "Add to cart",
+  className: 'btn btn--add',
 };
 
 export const Big = Button.bind({});
