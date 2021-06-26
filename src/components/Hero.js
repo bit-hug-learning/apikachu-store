@@ -7,7 +7,7 @@ import starImg from '../assets/icons/star.svg';
  * @returns {string} html element
  */
 function Hero() {
-  return /*html*/ `
+  return /* html */ `
     <div class="banner">
       FREE Shipping with orders over $35!
       <a href="" class="banner__link">Learn more<a>

@@ -9,13 +9,15 @@ import leftArrow from '../assets/icons/leftArrow.svg';
 import pokemonTypes from '../pokemonTypes';
 import pokeball from '../assets/images/pokeball.png';
 
-
-
-function Button( textButton, className, big, disabled ) {
+function Button(textButton, className, big, disabled) {
   return `
   <button class="${className} ${big ? ' btn--big' : ''}" 
   ${disabled ? 'disabled' : ''}>
-    ${textButton == `Shop now` ? `${textButton}<img class="pokeball" src="${pokeball}"/>` : textButton}
+    ${
+      textButton == `Shop now`
+        ? `${textButton}<img class="pokeball" src="${pokeball}"/>`
+        : textButton
+    }
   </button>
 `;
 }
@@ -27,7 +29,7 @@ function Stats(stats) {
 }
 
 function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
-  return /*html*/ `
+  return /* html */ `
     <div class="detail">
       <div class="pokedex">      
         <div class="pokedex__content-left">
@@ -98,7 +100,9 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
                 Stats
                 <div class="pokedex__stats-data">
                   <div class="pokedex__stats-left">${Stats(stats)}</div>
-                  <div class="pokedex__stats-right"><div>Weight: ${weight / 10} Kg</div> <div>Height: ${height / 10} m</div></div>
+                  <div class="pokedex__stats-right"><div>Weight: ${
+                    weight / 10
+                  } Kg</div> <div>Height: ${height / 10} m</div></div>
                 </div>
               </div>
             </div>
@@ -109,8 +113,8 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
       </div>
 
       <div class="buttons">
-        ${Button("Add to cart", "btn btn--add", true)}
-        ${Button("Shop now", "btn btn--buy", true)}
+        ${Button('Add to cart', 'btn btn--add', true)}
+        ${Button('Shop now', 'btn btn--buy', true)}
       </div>
 
       <div class="back-to-home">

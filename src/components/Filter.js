@@ -1,6 +1,7 @@
 import '../styles/components/filter.scss';
-import FilterIcon from '../assets/icons/filter.png'
-function Filter(){
+import FilterIcon from '../assets/icons/filter.png';
+
+function Filter() {
   return `
     <div class='filter'>
       <div class='filter__icon'>
@@ -40,65 +41,63 @@ function Filter(){
         </fieldset>
       </form>
     </div>
-  `
+  `;
 }
 
-export default Filter
+export default Filter;
 
-document.addEventListener( 'DOMContentLoaded', () => {
-  const rangeSlider = document.querySelector(".range-slider")
-  const filterIcon = document.querySelector('.filter__icon')
+document.addEventListener('DOMContentLoaded', () => {
+  const rangeSlider = document.querySelector('.range-slider');
+  const filterIcon = document.querySelector('.filter__icon');
 
-  const form = document.querySelector('#form-type')
+  const form = document.querySelector('#form-type');
 
-  const minPrice = document.getElementById('minprice')
-  const maxPrice = document.getElementById('maxprice')
+  const minPrice = document.getElementById('minprice');
+  const maxPrice = document.getElementById('maxprice');
 
-  const minRange = document.getElementById('range-min')
-  const maxRange = document.getElementById('range-max')
+  const minRange = document.getElementById('range-min');
+  const maxRange = document.getElementById('range-max');
 
   filterIcon.addEventListener('click', () => {
-    form.classList.toggle('form-visible')
-  })
+    form.classList.toggle('form-visible');
+  });
 
   minRange.addEventListener('change', () => {
-    minPrice.value = minRange.value
-
-  })
-  //get this value since its the 
+    minPrice.value = minRange.value;
+  });
+  // get this value since its the
   maxRange.addEventListener('change', () => {
-    maxPrice.value = maxRange.value
-  })
+    maxPrice.value = maxRange.value;
+  });
 
   minPrice.addEventListener('change', () => {
-    minRange.value = minPrice.value
-    rangeSlider.style.setProperty("--value-a", minPrice.value)
-    rangeSlider.style.setProperty("--text-value-a", minPrice.value)
-  })
+    minRange.value = minPrice.value;
+    rangeSlider.style.setProperty('--value-a', minPrice.value);
+    rangeSlider.style.setProperty('--text-value-a', minPrice.value);
+  });
   maxPrice.addEventListener('change', () => {
-    maxRange.value = maxPrice.value
-    rangeSlider.style.setProperty("--value-b", maxPrice.value)
-    rangeSlider.style.setProperty("--text-value-b", maxPrice.value)
-  })
+    maxRange.value = maxPrice.value;
+    rangeSlider.style.setProperty('--value-b', maxPrice.value);
+    rangeSlider.style.setProperty('--text-value-b', maxPrice.value);
+  });
 
-
-  function getCheckboxsValues(){
-    let values = []
-    const checkboxs = document.querySelectorAll('.filter__types input[type=checkbox]')
-    checkboxs.forEach(checkbox => {
-      checkbox.addEventListener('change', function(){
-        if(checkbox.checked){
-          values = [...values, checkbox.value]
-        }else{
-          values.splice(values.indexOf(checkbox.value), 1)
+  function getCheckboxsValues() {
+    let values = [];
+    const checkboxs = document.querySelectorAll(
+      '.filter__types input[type=checkbox]'
+    );
+    checkboxs.forEach((checkbox) => {
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          values = [...values, checkbox.value];
+        } else {
+          values.splice(values.indexOf(checkbox.value), 1);
         }
-        console.log(values)
-      })
+        console.log(values);
+      });
     });
-    return values
+    return values;
   }
-  //Get checkbox's values and log an array with them
-  const values = getCheckboxsValues()
-
-})
-
+  // Get checkbox's values and log an array with them
+  const values = getCheckboxsValues();
+});
