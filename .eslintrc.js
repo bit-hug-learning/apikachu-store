@@ -20,8 +20,8 @@ module.exports = {
   rules: {
     'no-plusplus': 'off',
     eqeqeq: 'off',
-    'no-unused-vars': 'off',
-    'no-console': 'off',
+    'no-unused-vars': 'warn',
+    'no-console': 'warn',
     'import/no-extraneous-dependencies': 'off',
     'prettier/prettier': [
       'error',
@@ -30,7 +30,6 @@ module.exports = {
         semi: true,
         singleQuote: true,
         tabWidth: 2,
-        trailingComma: 'es5',
       },
     ],
   },
