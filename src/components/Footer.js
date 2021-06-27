@@ -2,9 +2,11 @@ import '../styles/components/footer.scss';
 import YoutubeIcon from '../assets/icons/youtube.png';
 import GithubIcon from '../assets/icons/github.png';
 import TwitterIcon from '../assets/icons/twitter.png';
+import storeLogo from '../assets/images/apikachuStoreLogo.png';
+import usLogo from '../assets/icons/BitHugLogo.png';
 
-function Footer({ storeLogo = '', usLogo = '' }) {
-  return `
+function Footer() {
+  return html`
     <footer class='footer'>
         <a href='#home' class="footer__logo">
             <img src="${storeLogo}" alt="Apikachu Store"/>
@@ -17,13 +19,13 @@ function Footer({ storeLogo = '', usLogo = '' }) {
         <div class="footer__us">
             <p>Designed And Coded By:</p>
             <div class="footer__us-logo">
-                <img src=${usLogo} alt="BitHug" />
+                <img src="${usLogo}" alt="BitHug" />
             </div>
         </div>
         <div class="footer__social">
-            <a href='#' class='footer__social-circle'><img src=${YoutubeIcon} alt=""/></a>
-            <a href='#' class='footer__social-circle'><img src=${GithubIcon} alt=""/></a>
-            <a href='#' class='footer__social-circle'><img src=${TwitterIcon} alt=""/></a>
+            <a href='#' class='footer__social-circle'><img src="${YoutubeIcon}" alt=""/></a>
+            <a href='#' class='footer__social-circle'><img src="${GithubIcon}" alt=""/></a>
+            <a href='#' class='footer__social-circle'><img src="${TwitterIcon}" alt=""/></a>
         </div>
         <hr class='footer__line'/>
     </foooter>

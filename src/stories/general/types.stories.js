@@ -1,13 +1,12 @@
-import pokemonTypes from '../../pokemonTypes';
+import pokemonTypes from '../../utils/pokemonTypes';
 
-const AllTypes = () => {
-  return Object.keys(pokemonTypes)
+const AllTypes = () =>
+  Object.keys(pokemonTypes)
     .map(
       (type) =>
         `<img style="margin-right:1rem" src="${pokemonTypes[type].image}" />`
     )
     .join('');
-};
 
 export default {
   title: 'General/Pokemon Types',

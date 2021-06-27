@@ -1,11 +1,9 @@
-const Button = ({ textButton = "Button", className, big, disabled }) => {
-  return `
+const Button = ({ textButton = 'Button', className, big, disabled }) => `
     <button class="${className} ${big ? ' btn--big' : ''}" 
     ${disabled ? 'disabled' : ''}>
       ${textButton} 
     </button>
   `;
-};
 
 export default {
   title: 'General/Button',
@@ -33,7 +31,7 @@ Buy.args = {
 
 export const Add = Button.bind({});
 Add.args = {
-  textButton: "Add to cart",
+  textButton: 'Add to cart',
   className: 'btn btn--add',
 };
 
