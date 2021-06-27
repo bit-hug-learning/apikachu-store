@@ -22,6 +22,7 @@ module.exports = {
     eqeqeq: 'off',
     'no-unused-vars': 'off',
     'no-console': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'prettier/prettier': [
       'error',
       {

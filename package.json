@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --mode development --env development",
+    "start": "webpack serve --mode development --env development --config webpack.dev.js",
     "lint": "eslint . --fix",
-    "build": "webpack --mode production --env production",
+    "build": "webpack --mode production --env production --config webpack.prod.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

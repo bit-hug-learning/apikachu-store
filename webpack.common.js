@@ -3,16 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: {
-    devtools: (process.env.NODE_ENV = 'development'
-      ? './devtools/index.js'
-      : undefined),
-    index: './src/index.js',
-  },
-  output: {
-    path: `${__dirname}/build`,
-    filename: '[name].bundle.js',
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
@@ -20,11 +10,6 @@ module.exports = {
     new MiniCssExtractPlugin(),
   ],
   devtool: 'source-map',
-  devServer: {
-    historyApiFallback: {
-      index: 'build/index.html',
-    },
-  },
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
   },
@@ -47,5 +32,4 @@ module.exports = {
       },
     ],
   },
-  stats: 'errors-only',
 };

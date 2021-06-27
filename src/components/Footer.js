@@ -19,13 +19,13 @@ function Footer() {
         <div class="footer__us">
             <p>Designed And Coded By:</p>
             <div class="footer__us-logo">
-                <img src=${usLogo} alt="BitHug" />
+                <img src="${usLogo}" alt="BitHug" />
             </div>
         </div>
         <div class="footer__social">
-            <a href='#' class='footer__social-circle'><img src=${YoutubeIcon} alt=""/></a>
-            <a href='#' class='footer__social-circle'><img src=${GithubIcon} alt=""/></a>
-            <a href='#' class='footer__social-circle'><img src=${TwitterIcon} alt=""/></a>
+            <a href='#' class='footer__social-circle'><img src="${YoutubeIcon}" alt=""/></a>
+            <a href='#' class='footer__social-circle'><img src="${GithubIcon}" alt=""/></a>
+            <a href='#' class='footer__social-circle'><img src="${TwitterIcon}" alt=""/></a>
         </div>
         <hr class='footer__line'/>
     </foooter>
