@@ -12,6 +12,13 @@
   "emmet.includeLanguages": {
     "javascript": "html"
   },
+  "path-autocomplete.extensionOnImport": true,
+  "path-autocomplete.excludedItems": {
+    "**/*.js": { "when": "**" }
+  },
+  "path-autocomplete.pathMappings": {
+    "$root": "${folder}/src"
+  },
   "eslint.format.enable": true,
   "eslint.run": "onSave"
 }

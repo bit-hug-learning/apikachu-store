@@ -1,4 +1,4 @@
-import pokemonTypes from '../../pokemonTypes';
+import pokemonTypes from '../../utils/pokemonTypes';
 
 const AllTypes = () =>
   Object.keys(pokemonTypes)

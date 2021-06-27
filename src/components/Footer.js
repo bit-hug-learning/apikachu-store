@@ -2,9 +2,11 @@ import '../styles/components/footer.scss';
 import YoutubeIcon from '../assets/icons/youtube.png';
 import GithubIcon from '../assets/icons/github.png';
 import TwitterIcon from '../assets/icons/twitter.png';
+import storeLogo from '../assets/images/apikachuStoreLogo.png';
+import usLogo from '../assets/icons/BitHugLogo.png';
 
-function Footer({ storeLogo = '', usLogo = '' }) {
-  return `
+function Footer() {
+  return html`
     <footer class='footer'>
         <a href='#home' class="footer__logo">
             <img src="${storeLogo}" alt="Apikachu Store"/>

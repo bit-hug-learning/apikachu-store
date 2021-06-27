@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['airbnb-base', 'prettier'],
+  extends: [
+    'airbnb-base',
+    'prettier',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+  ],
   plugins: ['prettier'],
   parserOptions: {
     ecmaVersion: 12,
@@ -27,6 +32,13 @@ module.exports = {
         trailingComma: 'es5',
       },
     ],
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+      },
+    },
   },
   ignorePatterns: ['build/**/*'],
 };
