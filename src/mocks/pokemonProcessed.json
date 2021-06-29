@@ -1,0 +1,43 @@
+{
+  "id": 1,
+  "name": "bulbasaur",
+  "height": 7,
+  "weight": 69,
+  "image":  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
+  "stats": [
+    {
+      "name": "HP:",
+      "base_stat": 45
+    },
+    {
+      "name": "Attack:",
+      "base_stat": 49
+    },
+    {
+      "name": "Defense:",
+      "base_stat": 49
+    },
+    {
+      "name": "Sp. Atk:",
+      "base_stat": 65
+      
+    },
+    {
+      "name": "Sp. Def:",
+      "base_stat": 65
+      
+    },
+    {
+      "name": "Speed:",
+      "base_stat": 45
+    },
+    {
+      "name": "Total:",
+      "base_stat": 308
+    }
+  ],
+  "types": [
+    "grass",
+    "poison"
+  ]
+}

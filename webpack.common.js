@@ -1,19 +1,17 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  output: {
-    path: __dirname + '/build',
-    filename: 'app.bundle.js',
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),
+    new MiniCssExtractPlugin(),
   ],
-  devServer: {
-    historyApiFallback: {
-      index: 'build/index.html',
-    },
+  devtool: 'source-map',
+  resolve: {
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
   },
   module: {
     rules: [
@@ -22,21 +20,11 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
         },
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         type: 'asset',
