@@ -23,6 +23,10 @@ module.exports = {
     'no-unused-vars': 'warn',
     'no-console': 'warn',
     'import/no-extraneous-dependencies': 'off',
+    'import/prefer-default-export': 'off',
+    'no-restricted-syntax': 'off',
+    'import/no-named-as-default-member': 'off',
+    'consistent-return': 'off',
     'prettier/prettier': [
       'error',
       {

@@ -7,7 +7,7 @@ function Hero() {
   return html`
     <div class="banner">
       FREE Shipping with orders over $35!
-      <a href="" class="banner__link">Learn more<a>
+      <a href="/detail/8" class="banner__link" data-link>Learn more<a>
     </div>
     <div class="hero">
         <div class="hero__image">
