@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
 
   &__image {
     margin-bottom: 2rem;
@@ -22,7 +23,7 @@
       bottom: -10px;
     }
 
-    h1{
+    h1 {
       position: relative;
       left: -4px;
       margin: 0;
@@ -47,27 +48,27 @@
     font-size: 1.1rem;
   }
 
-
-  @media (min-width:768px) {
+  @media (min-width: 768px) {
     flex-direction: row;
     flex-direction: row-reverse;
     justify-content: center;
 
-    &__image, &__cta {
+    &__image,
+    &__cta {
       margin: 0;
     }
 
     &__title {
-      h1{
+      h1 {
         font-size: 4.6rem;
         margin-bottom: 1rem;
 
-        &::after{
+        &::after {
           content: "Gotta Catch 'em All";
           position: absolute;
           left: 5px;
           bottom: 0;
-          font-size: .8rem;
+          font-size: 0.8rem;
           font-weight: 400;
           color: #000;
         }
@@ -75,9 +76,8 @@
     }
   }
 
-  @media (min-width:1280px){
+  @media (min-width: 1280px) {
     &__title {
-
       p {
         bottom: -20px;
         font-size: 1.4rem;
@@ -88,7 +88,7 @@
         position: relative;
         font-size: 8rem;
 
-        &::after{
+        &::after {
           font-size: 1rem;
         }
       }
@@ -100,25 +100,25 @@
   }
 }
 
-.banner{
-  padding: .8rem;
+.banner {
+  padding: 0.8rem;
   font-size: 14px;
   text-align: center;
   display: none;
-  background-color: #393F3A;
+  background-color: #393f3a;
   color: #fff;
 
-  &__link{
+  &__link {
     margin-left: 2rem;
     font-weight: 600;
     color: #fff;
   }
 
-  @media (min-width:768px){
+  @media (min-width: 768px) {
     display: block;
   }
 
-  @media (min-width:1280px){
+  @media (min-width: 1280px) {
     padding: 1.2rem;
   }
 }

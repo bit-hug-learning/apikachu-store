@@ -19,7 +19,9 @@ function Menu({ number }) {
           <img src="${HamburgerIcon}" alt="Hamburger Icon" />
         </label>
         <div class="menu__container-logo">
-          <img menu="menu__logo" src=${ApikachuLogo} alt="Logo" />
+          <a href="/" data-link>
+            <img menu="menu__logo" src=${ApikachuLogo} alt="Logo" />
+          </a>
         </div>
         <ul class="menu__list">
           <li class="menu__item">

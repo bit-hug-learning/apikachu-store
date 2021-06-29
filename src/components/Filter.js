@@ -1,4 +1,5 @@
 import '../styles/components/filter.scss';
+import { typesList } from 'utils/pokemonTypes';
 import FilterIcon from '../assets/icons/filter.png';
 
 function Filter() {
@@ -58,22 +59,22 @@ function Filter() {
 
         <fieldset class="form__types">
           <legend>Types</legend>
-          <label><input type="checkbox" value="normal" /> Normal</label>
-          <label><input type="checkbox" value="fire" /> Fire</label>
-          <label><input type="checkbox" value="electric" /> Electric</label>
-          <label><input type="checkbox" value="water" /> Water</label>
-          <label><input type="checkbox" value="steel" /> Steel </label>
-          <label><input type="checkbox" value="grass" /> Grass</label>
-          <label><input type="checkbox" value="dragon" /> Dragon</label>
+          ${typesList
+            .map(
+              (type) =>
+                `<label>
+                  <input type="checkbox" value="${type.id}" />
+                  ${type.name}
+                </label>`
+            )
+            .join('')}
         </fieldset>
       </form>
     </div>
   `;
 }
 
-export default Filter;
-
-document.addEventListener('DOMContentLoaded', () => {
+Filter.afterRender = () => {
   const rangeSlider = document.querySelector('.range-slider');
   const filterIcon = document.querySelector('.filter__icon');
 
@@ -127,4 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // Get checkbox's values and log an array with them
   const values = getCheckboxsValues();
-});
+};
+
+export default Filter;

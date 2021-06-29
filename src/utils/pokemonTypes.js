@@ -19,90 +19,96 @@ import waterImg from 'assets/images/type_water.png';
 
 const pokemonTypes = {
   normal: {
-    name: 'normal',
+    name: 'Normal',
     image: normalImg,
     color: 'var(--color-type-gray)',
   },
   dark: {
-    name: 'dark',
+    name: 'Dark',
     image: darkImg,
     color: 'var(--color-type-gray)',
   },
   steel: {
-    name: 'steel',
+    name: 'Steel',
     image: steelImg,
     color: 'var(--color-type-gray)',
   },
   bug: {
-    name: 'bug',
+    name: 'Bug',
     image: bugImg,
     color: 'var(--color-type-green)',
   },
   grass: {
-    name: 'grass',
+    name: 'Grass',
     image: grassImg,
     color: 'var(--color-type-green)',
   },
   electric: {
-    name: 'electric',
+    name: 'Electric',
     image: electricImg,
     color: 'var(--color-type-yellow)',
   },
   rock: {
-    name: 'rock',
+    name: 'Rock',
     image: rockImg,
     color: 'var(--color-type-yellow)',
   },
   ground: {
-    name: 'ground',
+    name: 'Ground',
     image: groundImg,
     color: 'var(--color-type-yellow)',
   },
   fire: {
-    name: 'fire',
+    name: 'Fire',
     image: fireImg,
     color: 'var(--color-type-red)',
   },
   fighting: {
-    name: 'fighting',
+    name: 'Fighting',
     image: fightingImg,
     color: 'var(--color-type-red)',
   },
   ghost: {
-    name: 'ghost',
+    name: 'Ghost',
     image: ghostImg,
     color: 'var(--color-type-blue)',
   },
   water: {
-    name: 'water',
+    name: 'Water',
     image: waterImg,
     color: 'var(--color-type-blue)',
   },
   ice: {
-    name: 'ice',
+    name: 'Ice',
     image: iceImg,
     color: 'var(--color-type-blue)',
   },
   dragon: {
-    name: 'dragon',
+    name: 'Dragon',
     image: dragonImg,
     color: 'var(--color-type-blue)',
   },
   poison: {
-    name: 'poison',
+    name: 'Poison',
     image: poisonImg,
     color: 'var(--color-type-purple)',
   },
   psychic: {
-    name: 'psychic',
+    name: 'Psychic',
     image: psychicImg,
     color: 'var(--color-type-purple)',
   },
   fairy: {
-    name: 'fairy',
+    name: 'Fairy',
     image: fairyImg,
     color: 'var(--color-type-purple)',
   },
 };
+
+export const typesList = (() =>
+  Object.keys(pokemonTypes).map((id) => ({
+    id,
+    ...pokemonTypes[id],
+  })))();
 
 export default pokemonTypes;

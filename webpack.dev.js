@@ -8,13 +8,12 @@ module.exports = {
   },
   output: {
     path: `${__dirname}/build`,
+    publicPath: '/',
     filename: '[name].js',
     clean: true,
   },
   devServer: {
-    historyApiFallback: {
-      index: 'build/index.html',
-    },
+    historyApiFallback: true,
   },
   stats: 'errors-only',
 };
