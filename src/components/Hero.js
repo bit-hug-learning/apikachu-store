@@ -1,16 +1,13 @@
-import '../styles/components/hero.scss';
-import imageMobile from '../assets/images/heroPikachu.svg';
-import imageTablet from '../assets/images/heroPikachu_tablet.svg';
-import starImg from '../assets/icons/star.svg';
+import 'styles/components/hero.scss';
+import imageMobile from 'assets/images/heroPikachu.svg';
+import imageTablet from 'assets/images/heroPikachu_tablet.svg';
+import starImg from 'assets/icons/star.svg';
 
-/**
- * @returns {string} html element
- */
 function Hero() {
-  return /*html*/ `
+  return html`
     <div class="banner">
       FREE Shipping with orders over $35!
-      <a href="" class="banner__link">Learn more<a>
+      <a href="/detail/8" class="banner__link" data-link>Learn more<a>
     </div>
     <div class="hero">
         <div class="hero__image">
@@ -28,7 +25,6 @@ function Hero() {
             <span class="hero__price">$4.99</span><button class="btn btn--buy btn--big">Shop now</button> <img src="${starImg}"/>
           </div>
         </div>
-      
     </div>
   `;
 }

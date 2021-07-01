@@ -1,9 +1,11 @@
-
-*, *::before, *::after{
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: var(--font-family-montserrat);
@@ -13,11 +15,16 @@ body, html {
   max-width: 600px;
   margin: auto;
 
-  @media (min-width:768px) {
+  @media (min-width: 768px) {
     max-width: 1000px;
   }
 
   @media (min-width: 1280px) {
     max-width: 1440px;
   }
+}
+
+#mainContent {
+  min-height: 60vh;
+  text-align: center;
 }
