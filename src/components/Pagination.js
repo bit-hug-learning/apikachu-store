@@ -1,21 +1,75 @@
-const Pagination = ({ source, onChange }) => {
-  const pages = [source[0], , source[source.length - 1]];
+import { setPagination } from 'context/actions';
+import store from 'context/index';
+import 'styles/components/pagination.scss';
+
+const PaginationButtons = ({ numberOfPages, current }) => {
+  let pages = [1, 2, 3, '...', numberOfPages];
+
+  if (current > 3) pages = [1, '...', current, '...', numberOfPages];
+
+  if (current > numberOfPages - 3) {
+    pages = [1, '...', numberOfPages - 2, numberOfPages - 1, numberOfPages];
+  }
 
   return html`
-    <div class="pagination">
-      <button class="pagination__prev"></button>
-      ${pages.map(
+    <button
+      class="pagination__prev"
+      data-pagination="${current - 1}"
+      ${current === 1 ? 'disabled' : ''}
+    >
+      &lt;
+    </button>
+    ${pages
+      .map(
         (page) =>
           html`<button
-            class="pagination__section"
-            ${page === '...' ? 'disabled' : ''}
+            class="pagination__section ${page === current ? 'active' : ''}"
+            data-pagination="${page}"
           >
             ${page}
           </button>`
-      )}
-      <button class="pagination__next"></button>
-    </div>
+      )
+      .join('')}
+    <button
+      class="pagination__next"
+      data-pagination="${current + 1}"
+      ${current === numberOfPages ? 'disabled' : ''}
+    >
+      &gt;
+    </button>
   `;
+};
+
+const changePage = () => {
+  const buttons = document.querySelectorAll('[data-pagination]');
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const page = parseInt(button.dataset.pagination, 10);
+      if (page) setPagination(page);
+    });
+  });
+};
+
+const renderButtons = (current) => {
+  const paginations = document.querySelectorAll('.pagination');
+  paginations.forEach((pagination) => {
+    pagination.innerHTML = PaginationButtons({
+      numberOfPages: 9,
+      current,
+    });
+
+    changePage();
+  });
+};
+
+const Pagination = () => html` <div class="pagination"></div> `;
+
+Pagination.afterRender = () => {
+  renderButtons(store.get().pagination);
+
+  store.subscribe((state) => {
+    renderButtons(state.pagination);
+  });
 };
 
 export default Pagination;

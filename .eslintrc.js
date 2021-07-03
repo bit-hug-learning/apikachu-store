@@ -27,6 +27,7 @@ module.exports = {
     'no-restricted-syntax': 'off',
     'import/no-named-as-default-member': 'off',
     'consistent-return': 'off',
+    'no-param-reassign': 'off',
     'prettier/prettier': [
       'error',
       {
