@@ -1,7 +1,9 @@
 import "../styles/components/order.scss";
+import SearchBar from "./SearchBar";
 
 function Order() {
   return html`
+    ${SearchBar()}
     <div class="orderpagination">
       <div class="dropdown">
         <button class="order-button">

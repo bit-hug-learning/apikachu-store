@@ -17,8 +17,9 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  margin: 10px 0;
+  margin: 15px 0;
   @media (min-width: 768px) {
+    margin: 25px 0;
   }
 
 }
