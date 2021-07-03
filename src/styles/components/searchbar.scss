@@ -1,0 +1,33 @@
+.search-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 92%;
+
+  @media (min-width: 768px) {
+    width: 86%;
+  }
+
+  @media (min-width: 1280px) {
+    width: 589px;
+  }
+  
+  height: 41px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgb(0, 0, 0, .2);
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    margin: 9px;
+    background: url("../../assets/icons/search.svg") center/cover no-repeat;
+  }
+
+  &__input {
+    width: 100px;
+    border: none;
+    font-family: var(--font-family-montserrat);
+    font-weight: 500;
+  }
+}
