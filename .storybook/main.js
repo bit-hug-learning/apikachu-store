@@ -23,6 +23,8 @@ module.exports = {
       test: /\.(svg|png|jpeg|jpg|gif)$/i,
     });
 
+    config.resolve.modules.push(path.resolve(__dirname, '../src'))
+
     // Return the altered config
     return config;
   },
