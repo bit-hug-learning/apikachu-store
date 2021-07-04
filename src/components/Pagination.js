@@ -1,6 +1,7 @@
 import { setPagination } from 'context/actions';
 import store from 'context/index';
 import 'styles/components/pagination.scss';
+import Arrow from './Arrow';
 
 const PaginationButtons = ({ numberOfPages, current }) => {
   let pages = [1, 2, 3, '...', numberOfPages];
@@ -17,7 +18,7 @@ const PaginationButtons = ({ numberOfPages, current }) => {
       data-pagination="${current - 1}"
       ${current === 1 ? 'disabled' : ''}
     >
-      &lt;
+      ${Arrow({ direction: 'left' })}
     </button>
     ${pages
       .map(
@@ -35,7 +36,7 @@ const PaginationButtons = ({ numberOfPages, current }) => {
       data-pagination="${current + 1}"
       ${current === numberOfPages ? 'disabled' : ''}
     >
-      &gt;
+      ${Arrow()}
     </button>
   `;
 };
