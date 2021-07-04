@@ -4,14 +4,14 @@
   align-items: center;
   width: 100%;
 
-  @media (min-width: 768px) {
-    width: 665px;
-  }
+  // @media (min-width: 768px) {
+  //   width: 665px;
+  // }
 
-  @media (min-width: 1280px) {
-    width: 589px;
-  }
-  
+  // @media (min-width: 1280px) {
+  //   width: 589px;
+  // }
+
   height: 41px;
   margin: 0 auto;
   border-radius: 8px;
@@ -21,7 +21,7 @@
     width: 20px;
     height: 20px;
     margin: 9px;
-    background: url("../../assets/icons/search.svg") center/cover no-repeat;
+    background: url('../../assets/icons/search.svg') center/cover no-repeat;
   }
 
   &__input {

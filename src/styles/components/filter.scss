@@ -1,19 +1,23 @@
 @import '../../../node_modules/@yaireo/ui-range/ui-range.scss';
 
-.filter {
-  position: relative;
-  width: 300px;
-  &__icon {
-    display: none;
-  }
-}
+// .filter {
+//   position: relative;
+//   background-color: white;
+//   left: 0;
+
+//   &__icon {
+//     display: none;
+//   }
+// }
+
 .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  // width: 100%;
   padding: 0 1.5em;
   border-right: 1px solid var(--color-black-10);
+  width: 300px;
 
   fieldset {
     border: none;
@@ -91,9 +95,11 @@
   .form-visible {
     position: absolute;
     display: flex;
-    left: 25px;
-    top: 0;
+    background-color: white;
+    left: 0;
+    z-index: 100;
   }
+
   .filter__icon {
     display: flex;
     cursor: pointer;

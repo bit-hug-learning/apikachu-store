@@ -4,7 +4,6 @@ import SearchBar from './SearchBar';
 
 function Order() {
   return html`
-    ${SearchBar()}
     <div class="orderpagination">
       <div class="dropdown">
         <button class="order-button">
@@ -18,7 +17,6 @@ function Order() {
           <a class="dropdown-content__z-a" href="#">Z - A</a>
         </div>
       </div>
-      ${Pagination()}
     </div>
   `;
 }
