@@ -16,6 +16,7 @@
         grid-area: separator;
         width: 141px;
         transform: rotate(90deg);
+        margin: 0;
     }
 
     &__logo{
@@ -81,7 +82,7 @@
     
     &__social{
         grid-area: socialMedia;
-        width: 100%;
+        width: 80%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -93,7 +94,7 @@
             height: 30px;
             display: grid;
             place-items: center;
-            background: #2AC769;
+            background: var(--color-primary);
             border-radius: 50%;
             
             img{

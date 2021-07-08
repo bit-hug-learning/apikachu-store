@@ -1,4 +1,6 @@
-
+.detail {
+  padding: 1rem;
+}
 .pokedex {
   @media (min-width:768px) {
     display: flex;
@@ -50,7 +52,7 @@
       display: block;
       position: absolute;
       bottom: 0;
-      left: calc( -50vw + 1rem + 2.3vw );
+      left: calc( -50vw + 1rem + 2.1vw + .25vw );
       z-index: -1;
       width: calc( 100vw - 2rem );
       height: 200px;
@@ -61,11 +63,8 @@
       border-bottom-left-radius: 2.2vw;
       border-bottom-right-radius: 2.2vw;
     }
-    @media (min-width:1000px) {
-      left: calc( -50vw + 1rem + 2.3vw + .05vw);
-    }
-    @media (min-width:1312px) {
-      left: calc(-613px + 3px);
+    @media (min-width:1310px) {
+      left: calc(-610px);
       width: 1280px;
       border-left: 6px solid #742424;
       border-right: 6px solid #742424;
@@ -114,6 +113,10 @@
       padding-top: 6vw;
       margin-top: -6vw;
     }
+    @media (min-width:1280px) {
+      padding-top: 77px;
+      margin-top: -77px;
+    }
   }
 
   &__frame-container {
@@ -134,39 +137,49 @@
   }
 
   &__image {
+    display: flex;
+    justify-content: center;
     width: calc(100% - 1.5vw);
-    padding: 12% 0;
+    // padding: 12% 0;
+    height: 43vw;
     margin: 3vw;
+
     background-color: var(--color-type-green);
-    text-align: center;
     @media (min-width:768px) {
       margin: 1.5vw;
+      height: 25vw;
     }
     @media (min-width:1280px) {
+      width: calc(100% - 19px);
       margin: 19px;
+      height: 320px;
     }
   }
   &__image img{
     width: 40%;
+    padding: 10px 0;
   }
   &__frame-container.name {
     width: 70%;
     @media (min-width:768px) {
-      margin: 7.5% 0;
+      margin: 3.5% 0;
+    }
+    @media (min-width:1280px) {
+      margin: 40px 0;
     }
   }
   &__frame-container.type, &__frame-container.stat {
     @media (min-width:768px) {
-      margin: 2.5vw 0;
+      margin: 2vw 0;
     }
     @media (min-width:860px) {
       margin: 3vw 0;
     }
     @media (min-width:1000px) {
-      margin: 3.8vw 0;
+      margin: 4.8vw 0;
     }
     @media (min-width:1280px) {
-      margin: 64px 0;
+      margin: 75px 0;
     }
   }
   &__frame-container.stat {
@@ -199,7 +212,7 @@
     margin-bottom: 3vw;
 
     @media (min-width:1280px) {
-      margin-bottom: 64px;
+      margin-bottom: 46px;
     }
   }
   &__buttons button {
@@ -228,7 +241,7 @@
   }
   @keyframes button-effect {
     0% {
-      opacity: 0.35;
+      opacity: 0.55;
       transform: scale(1.5);
     }
     100% {
@@ -254,7 +267,7 @@
     padding: .7rem 0;
     margin: 3vw;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #AC2314;
     background-color: var(--color-white);
@@ -263,6 +276,7 @@
     }
     @media (min-width:768px) {
       margin: 1.5vw;
+      font-size: 1.4rem;
     }
     @media (min-width:1280px) {
       margin: 19px;
@@ -289,10 +303,14 @@
     @media (min-width:768px) {
       margin: 1.5vw;
     }
+    @media (min-width:1280px) {
+      width: calc(100% - 19px);
+      margin: 19px;
+    }
   }
   &__types {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;  
     padding: .7rem 0;
     background-color: #FFF8D2;
@@ -334,10 +352,9 @@
   }
   &__stats-left, &__stats-right {
     padding: 4px;
-    margin: 15px 0;
+    margin: 15px 5px;
     border: 2px solid rgb(255, 164, 90);
     border-radius: 8px;
-    font-size: .8rem;
     background-color: var(--color-white);
     @media (max-width:319px) {
       font-size: .7rem;
@@ -351,23 +368,23 @@
   }
   &__stats-left div, &__stats-right div {
     padding: 3px;
+    font-size: .7rem;
     
     @media (min-width:386px) {
       padding: 3px 3.5vw;
     }
-    @media (min-width:420px) {
+    @media (min-width:518px) {
       padding: 3px 2.5vw;
+      font-size: 1rem;
     }
     @media (min-width:768px) {
       padding: 3.5px 1.0vw;
+      font-size: .8rem;
     }
     @media (min-width:1280px) {
       padding: 4px 19px;
+      font-size: 1.2rem;
     }
-  }
-  &__stats-left div:last-of-type {
-    padding-top: .75rem;
-    font-weight: 700;
   }
 
   &__stats-right {
@@ -392,21 +409,29 @@
   
 }
 
+.buttons {
+  margin-top: 1.5vw;
+  @media (min-width:1000px) {
+    margin-top: 2.5vw;
+  }
+  @media (min-width:1280px) {
+    margin-top: 0;
+  }
+}
+
 .back-to-home {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100px;
-  margin: 50px auto;
+  margin: 13vw auto;
+  margin-bottom: 40px;
   font-weight: 500;
   cursor: pointer;
-  @media (min-width: 768px) {
-    position: relative;
-    top: 6vw;
-    left: 0;
-  }
+
   @media (min-width: 1280px) {
-    top: 77px;
+    margin: calc(0.13 * 1280px) auto;
+    margin-bottom: 70px;
   }
 
   & span {
