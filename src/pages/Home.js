@@ -1,20 +1,21 @@
 import Filter from 'components/Filter';
 import Hero from 'components/Hero';
 import Pagination from 'components/Pagination';
-import pokemonData from '../mocks/pokemonProcessed.json';
-import Card from '../components/Card';
 import 'styles/components/home.scss';
 import Order from 'components/Order';
-import FilterIcon from '../assets/icons/filter.png';
 import SearchBar from 'components/SearchBar';
 import { getPokemonByRange } from 'utils/fetchData';
+import store from 'context/index';
+import paginateArray from 'utils/paginateArray';
+import { setAllPokemons } from 'context/actions';
+import Card from '../components/Card';
+import FilterIcon from '../assets/icons/filter.png';
 
 const Home = () => html`
   <div class="home">
     ${Hero()}
     <div class="home__container">
       ${Filter()}
-
       <div>
         <div class="home__controls">
           ${SearchBar()}
@@ -34,9 +35,18 @@ Home.afterRender = async () => {
   Pagination.afterRender();
 
   const homeCards = document.querySelector('.home__cards');
-  const pokemons = await getPokemonByRange(1, 151);
+  store.subscribe((state) => {
+    homeCards.innerHTML = paginateArray(
+      state.filteredPokemons,
+      state.pagination,
+      12
+    )
+      .map((pokemon) => Card(pokemon))
+      .join('');
+  });
 
-  homeCards.innerHTML = pokemons.map((pokemon) => Card(pokemon)).join('');
+  const pokemons = await getPokemonByRange(1, 151);
+  setAllPokemons(pokemons);
 };
 
 export default Home;
