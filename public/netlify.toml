@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/docs/routing/redirections"
+  to = "/docs/routing/redirects"
+  status = 301
