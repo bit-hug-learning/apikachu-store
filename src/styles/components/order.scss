@@ -6,22 +6,22 @@
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: center;
-    width: 628px;
+    // width: 628px;
     margin: 0 auto;
   }
   @media (min-width: 1280px) {
-    width: 828px;
+    // width: 828px;
   }
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
+  z-index: 1;
   margin: 15px 0;
   @media (min-width: 768px) {
     margin: 25px 0;
   }
-
 }
 
 .order-button {
@@ -41,7 +41,7 @@
   &__icon {
     width: 20px;
     height: 20px;
-    background: url("../../assets/icons/down.svg") center/cover no-repeat;
+    background: url('../../assets/icons/down.svg') center/cover no-repeat;
   }
 }
 
@@ -59,11 +59,11 @@
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
-  font-size: .75rem;
+  font-size: 0.75rem;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-content a:hover {
-  background-color: #fdf0a4
+  background-color: #fdf0a4;
 }

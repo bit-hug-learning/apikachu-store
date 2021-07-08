@@ -10,7 +10,7 @@ import Button from '../components/Button';
 
 function Stats(stats) {
   return stats
-    .map((stat) => html`<div>${stat.name} ${stat.base_stat}</div>`)
+    .map((stat) => html`<div>${stat.name.split('')[0].toUpperCase().concat(stat.name.slice(1))}: ${stat.base_stat}</div>`)
     .join('');
 }
 
@@ -35,7 +35,7 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
 
             <div class="pokedex__frame-container name">
               <div class="pokedex__name">
-                <h2># ${id} ${name}</h2>
+                <h2># ${id < 10 ? `00${id}` : id} ${name.split('')[0].toUpperCase().concat(name.slice(1))}</h2>
               </div>
             </div>
 

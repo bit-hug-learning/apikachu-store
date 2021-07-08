@@ -1,9 +1,9 @@
-import "../styles/components/order.scss";
-import SearchBar from "./SearchBar";
+import '../styles/components/order.scss';
+import Pagination from './Pagination';
+import SearchBar from './SearchBar';
 
 function Order() {
   return html`
-    ${SearchBar()}
     <div class="orderpagination">
       <div class="dropdown">
         <button class="order-button">
@@ -13,12 +13,9 @@ function Order() {
         <div class="dropdown-content">
           <a class="dropdown-content__min-max" href="#">Min-Max</a>
           <a class="dropdown-content__max-min" href="#">Max-Min</a>
-          <a class="dropdown-content__a-z"  href="#">A - Z</a>
-          <a class="dropdown-content__z-a"  href="#">Z - A</a>
+          <a class="dropdown-content__a-z" href="#">A - Z</a>
+          <a class="dropdown-content__z-a" href="#">Z - A</a>
         </div>
-      </div> 
-      <div>
-      Pagination
       </div>
     </div>
   `;

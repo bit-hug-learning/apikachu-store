@@ -1,10 +1,11 @@
 import Detail from 'components/Detail';
 import { getParams } from 'router';
-import pokemonData from '../mocks/pokemonProcessed.json';
+import { getPokemon } from 'utils/fetchData';
 
-const DetailPage = () => {
-  console.log(getParams());
-  return Detail(pokemonData);
+const DetailPage = async () => {
+  const { pokemonId } = getParams();
+  const pokemon = await getPokemon(pokemonId);
+  return Detail(pokemon);
 };
 
 export default DetailPage;

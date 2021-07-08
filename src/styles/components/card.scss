@@ -9,13 +9,15 @@
     border-top-left-radius: 21px;
     border-top-right-radius: 21px;
     background-color: var(--color-type-green);
-
+    height: 160px;
   }
 
   &__image {
     width: 35%;
     max-width: 100px;
-    margin: 40px calc(65% / 2);
+    // margin: 40px calc(65% / 2);
+    height: 100%;
+    object-fit: contain;
   }
 
   &__wish-list-icon {
@@ -27,8 +29,8 @@
     display: inline-block;
     width: 24px;
     height: 24px;
-    background: url("../../assets/icons/heart.svg") center/cover no-repeat;
-  } 
+    background: url('../../assets/icons/heart.svg') center/cover no-repeat;
+  }
 
   &__body {
     margin: 0;

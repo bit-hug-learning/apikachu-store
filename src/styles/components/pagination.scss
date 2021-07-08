@@ -1,0 +1,31 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--color-black-20);
+    background-color: white;
+    font-weight: 700;
+    font-size: 17px;
+
+    &.active {
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    &:hover {
+      border-color: var(--color-primary);
+      cursor: pointer;
+    }
+
+    &:disabled {
+      background-color: #919eab;
+      border-color: #919eab;
+      color: #fff;
+    }
+  }
+}

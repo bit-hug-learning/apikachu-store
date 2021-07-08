@@ -23,6 +23,11 @@ const pokemonTypes = {
     image: normalImg,
     color: 'var(--color-type-gray)',
   },
+  flying: {
+    name: 'Flying',
+    image: normalImg,
+    color: 'var(--color-type-gray)',
+  },
   dark: {
     name: 'Dark',
     image: darkImg,

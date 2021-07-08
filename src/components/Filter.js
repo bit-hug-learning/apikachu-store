@@ -1,76 +1,70 @@
 import '../styles/components/filter.scss';
 import { typesList } from 'utils/pokemonTypes';
-import FilterIcon from '../assets/icons/filter.png';
 
 function Filter() {
   return html`
-    <div class="filter">
-      <div class="filter__icon">
-        <img src="${FilterIcon}" alt="Filter" />
-      </div>
-      <form class="form" id="form-type">
-        <fieldset class="form__price">
-          <legend>Price</legend>
-          <!--To know more about the dual slider go to: https://github.com/yairEO/ui-range-->
-          <div
-            class="range-slider flat"
-            data-ticks-position="top"
-            style='--min:10; --max:1000; --prefix:"$"; --value-a:200; --value-b:800; --text-value-a:"200"; --text-value-b:"800";--thumb-size:15px; --thumb-color: #1492E6; --primary-color:#1492E6;'
-          >
-            <input
-              id="range-min"
-              type="range"
-              min="10"
-              max="1000"
-              value="200"
-              oninput="this.parentNode.style.setProperty('--value-a',this.value); this.parentNode.style.setProperty('--text-value-a', JSON.stringify(this.value))"
-            />
-            <output></output>
-            <input
-              id="range-max"
-              type="range"
-              min="10"
-              max="1000"
-              value="800"
-              oninput="this.parentNode.style.setProperty('--value-b',this.value); this.parentNode.style.setProperty('--text-value-b', JSON.stringify(this.value))"
-            />
-            <output></output>
-            <div class="range-slider__progress"></div>
-          </div>
+    <form class="form" id="form-type">
+      <fieldset class="form__price">
+        <legend>Price</legend>
+        <!--To know more about the dual slider go to: https://github.com/yairEO/ui-range-->
+        <div
+          class="range-slider flat"
+          data-ticks-position="top"
+          style='--min:10; --max:1000; --prefix:"$"; --value-a:200; --value-b:800; --text-value-a:"200"; --text-value-b:"800";--thumb-size:15px; --thumb-color: #1492E6; --primary-color:#1492E6;'
+        >
+          <input
+            id="range-min"
+            type="range"
+            min="10"
+            max="1000"
+            value="200"
+            oninput="this.parentNode.style.setProperty('--value-a',this.value); this.parentNode.style.setProperty('--text-value-a', JSON.stringify(this.value))"
+          />
+          <output></output>
+          <input
+            id="range-max"
+            type="range"
+            min="10"
+            max="1000"
+            value="800"
+            oninput="this.parentNode.style.setProperty('--value-b',this.value); this.parentNode.style.setProperty('--text-value-b', JSON.stringify(this.value))"
+          />
+          <output></output>
+          <div class="range-slider__progress"></div>
+        </div>
 
-          <div class="form__price-input">
-            <input
-              id="minprice"
-              type="number"
-              min="10"
-              max="1000"
-              placeholder="$ - min"
-            />
-            <hr />
-            <input
-              id="maxprice"
-              type="number"
-              min="10"
-              max="1000"
-              placeholder="$ - max"
-            />
-          </div>
-        </fieldset>
+        <div class="form__price-input">
+          <input
+            id="minprice"
+            type="number"
+            min="10"
+            max="1000"
+            placeholder="$ - min"
+          />
+          <hr />
+          <input
+            id="maxprice"
+            type="number"
+            min="10"
+            max="1000"
+            placeholder="$ - max"
+          />
+        </div>
+      </fieldset>
 
-        <fieldset class="form__types">
-          <legend>Types</legend>
-          ${typesList
-            .map(
-              (type) =>
-                `<label>
+      <fieldset class="form__types">
+        <legend>Types</legend>
+        ${typesList
+          .map(
+            (type) =>
+              `<label>
                   <input type="checkbox" value="${type.id}" />
                   ${type.name}
                 </label>`
-            )
-            .join('')}
-        </fieldset>
-      </form>
-    </div>
+          )
+          .join('')}
+      </fieldset>
+    </form>
   `;
 }
 
