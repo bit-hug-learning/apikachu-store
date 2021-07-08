@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/docs/routing/redirections"
-  to = "/docs/routing/redirects"
-  status = 301
+  from = "/*"
+  to = "/index.html"
+  status = 200
