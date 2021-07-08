@@ -24,6 +24,7 @@
     "@storybook/manager-webpack5": "^6.3.0-alpha.41",
     "babel-loader": "^8.2.2",
     "babel-plugin-html-tag": "^2.0.1",
+    "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^5.2.4",
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -40,7 +41,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "panic-overlay": "^1.0.51",
-    "@yaireo/ui-range": "^2.1.15"
+    "@yaireo/ui-range": "^2.1.15",
+    "panic-overlay": "^1.0.51"
   }
 }
