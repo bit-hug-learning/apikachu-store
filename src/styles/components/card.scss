@@ -1,0 +1,74 @@
+.card {
+  width: 100%;
+  max-width: 284px;
+  border: 1px solid var(--color-black-20);
+  border-radius: 21px;
+
+  &__figure {
+    position: relative;
+    border-top-left-radius: 21px;
+    border-top-right-radius: 21px;
+    background-color: var(--color-type-green);
+    height: 160px;
+  }
+
+  &__image {
+    width: 35%;
+    max-width: 100px;
+    // margin: 40px calc(65% / 2);
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__wish-list-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+    cursor: pointer;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url('../../assets/icons/heart.svg') center/cover no-repeat;
+  }
+
+  &__body {
+    margin: 0;
+    padding: 7px 15px;
+  }
+
+  &__primary-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 285px) {
+      flex-direction: column;
+    }
+  }
+
+  &__name {
+    font-size: 1.12rem;
+    font-weight: 500;
+  }
+
+  &__id {
+    color: var(--color-primary);
+    padding-right: 5px;
+  }
+
+  &__price {
+    padding: 10px 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  &__types img {
+    padding: 0 5px;
+    vertical-align: middle;
+    width: 40px;
+  }
+
+  &__button .btn--add {
+    width: 100%;
+  }
+}
