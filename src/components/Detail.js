@@ -6,20 +6,7 @@ import pokedexHinge from '../assets/images/pokedex_hinge.svg';
 import pokedexHingeV from '../assets/images/pokedex_hinge-v.svg';
 import leftArrow from '../assets/icons/leftArrow.svg';
 import pokemonTypes from '../utils/pokemonTypes';
-import pokeball from '../assets/images/pokeball.png';
-
-function Button(textButton, className, big, disabled) {
-  return html`
-    <button
-      class="${className} ${big ? ' btn--big' : ''}"
-      ${disabled ? 'disabled' : ''}
-    >
-      ${textButton == `Shop now`
-        ? `${textButton}<img class="pokeball" src="${pokeball}"/>`
-        : textButton}
-    </button>
-  `;
-}
+import Button from '../components/Button';
 
 function Stats(stats) {
   return stats

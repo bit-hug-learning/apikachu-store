@@ -1,3 +1,4 @@
+import { CARDS_PER_PAGE } from 'config';
 import { setPagination } from 'context/actions';
 import store from 'context/index';
 import 'styles/components/pagination.scss';
@@ -52,10 +53,11 @@ const changePage = () => {
 };
 
 const renderButtons = (current) => {
+  const { filteredPokemons } = store.get();
   const paginations = document.querySelectorAll('.pagination');
   paginations.forEach((pagination) => {
     pagination.innerHTML = PaginationButtons({
-      numberOfPages: 9,
+      numberOfPages: Math.ceil(filteredPokemons.length / CARDS_PER_PAGE),
       current,
     });
 
