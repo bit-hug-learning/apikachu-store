@@ -12,7 +12,7 @@ function Card({ image, id, name, types = [], weight } = {}) {
         style="background: ${pokemonTypes[types[0]].color}"
       >
         <img class="card__image" src="${image}" alt="" />
-        <span class="card__wish-list-icon"></span>
+        <span id="heart" class="card__wish-list-icon"></span>
       </div>
       <div class="card__body">
         <div class="card__primary-info">
@@ -38,5 +38,20 @@ function Card({ image, id, name, types = [], weight } = {}) {
     </article>
   `;
 }
+console.log("pre");
+var i;
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("load");
+  const heart = document.querySelectorAll(".card__wish-list-icon");
+  console.log(heart);
+  for(i=0; i<heart.length; i++){
+    heart.addEventListener("click", () => {
+      console.log("click");
+      // heart.style.backgroundColor = 'red' ;
+    });
+    }
+  });
+ 
+
 
 export default Card;
