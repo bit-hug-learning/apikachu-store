@@ -1,7 +1,7 @@
 import '../styles/components/card.scss';
 import pokemonTypes from '../utils/pokemonTypes';
 import Button from './Button';
-import router from '../router'
+import router from '../router';
 
 function Card({ image, id, name, types = [], weight } = {}) {
 
@@ -63,7 +63,6 @@ const CardToDetail = () =>{
       let str = element.firstChild.getAttribute("src");
       let id = str.split(".svg")[0].slice(-1);
       router.navigateTo(`./detail/${id}`);
-
     });
   });
 
