@@ -8,7 +8,7 @@ import { getPokemonByRange } from 'utils/fetchData';
 import store from 'context/index';
 import paginateArray from 'utils/paginateArray';
 import { setAllPokemons } from 'context/actions';
-import Card from '../components/Card';
+import {Card, Wished, CardToDetail}  from '../components/Card';
 import FilterIcon from '../assets/icons/filter.png';
 
 const Home = () => html`
@@ -33,6 +33,7 @@ const Home = () => html`
 Home.afterRender = async () => {
   Filter.afterRender();
   Pagination.afterRender();
+  
 
   const homeCards = document.querySelector('.home__cards');
   store.subscribe((state) => {
@@ -43,6 +44,8 @@ Home.afterRender = async () => {
     )
       .map((pokemon) => Card(pokemon))
       .join('');
+    CardToDetail();  
+    Wished();  
   });
 
   const pokemons = await getPokemonByRange(1, 151);

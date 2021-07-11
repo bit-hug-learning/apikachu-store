@@ -20,6 +20,7 @@
     height: 100%;
     padding: 10px 0;
     object-fit: contain;
+
   }
 
   &__wish-list-icon {
@@ -32,7 +33,15 @@
     margin: 15px;
     cursor: pointer;
     background: url('../../assets/icons/heart.svg') center/cover no-repeat;
+
+    &.clicked {
+      background: url('../../assets/icons/heart-active.png') center/cover no-repeat;
+    }
+
   }
+
+
+
 
   &__wish-list-icon:hover {
     filter: brightness(0) saturate(100%) invert(48%) sepia(9%) saturate(6620%) hue-rotate(321deg) brightness(116%) contrast(108%);

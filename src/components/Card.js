@@ -1,9 +1,9 @@
 import '../styles/components/card.scss';
 import pokemonTypes from '../utils/pokemonTypes';
 import Button from './Button';
+import router from '../router'
 
 function Card({ image, id, name, types = [], weight } = {}) {
-  console.log(types[0]);
 
   return html`
     <article class="card">
@@ -37,21 +37,36 @@ function Card({ image, id, name, types = [], weight } = {}) {
       <div class="card__button">${Button('add to cart', 'btn btn--add')}</div>
     </article>
   `;
+
 }
-console.log("pre");
-var i;
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("load");
+const Wished = () =>{
+  
   const heart = document.querySelectorAll(".card__wish-list-icon");
-  console.log(heart);
-  for(i=0; i<heart.length; i++){
-    heart.addEventListener("click", () => {
-      console.log("click");
-      // heart.style.backgroundColor = 'red' ;
+
+  heart.forEach(element => {
+    element.addEventListener("click", (event) => {
+      console.log("wished");
+      element.classList.toggle("clicked");
+      event.stopPropagation();
     });
-    }
+
   });
- 
+}
 
+const CardToDetail = () =>{
+  
+  const cards = document.querySelectorAll(".card__figure");
+  
+  cards.forEach(element => {
+    element.addEventListener("click", () => {
+      console.log("clicked");
+      let str = element.firstChild.getAttribute("src");
+      let id = str.split(".svg")[0].slice(-1);
+      router.navigateTo(`./detail/${id}`);
 
-export default Card;
+    });
+  });
+
+}
+
+export { Card, Wished, CardToDetail };
