@@ -30,10 +30,11 @@
     @media (min-width:768px) {
       display: block;
       position: absolute;
-      top: 51%;
+      top: 53%;
       left: calc( 100% - .25vw - 2.1vw);
     }
     @media (min-width:1280px) {
+      top: 51%;
       left: calc( 100% - 30px);
     }
   }
@@ -52,9 +53,9 @@
       display: block;
       position: absolute;
       bottom: 0;
-      left: calc( -50vw + 1rem + 2.1vw + .25vw );
+      left: calc( -50vw + 1.7rem + 2.1vw + .25vw );
       z-index: -1;
-      width: calc( 100vw - 2rem );
+      width: calc( 100vw - 3.4rem );
       height: 200px;
       background-color: var(--color-pokedex);
       border-left: .5vw solid #742424;
@@ -63,7 +64,13 @@
       border-bottom-left-radius: 2.2vw;
       border-bottom-right-radius: 2.2vw;
     }
-    @media (min-width:1310px) {
+
+    @media (min-width:1280px) {
+      left: calc( -50vw + 1.7rem + 2.1vw + 0.17vw );
+      width: calc( 100vw - 3.4rem + 0.05vw);
+    }
+
+    @media (min-width:1335px) {
       left: calc(-610px);
       width: 1280px;
       border-left: 6px solid #742424;
