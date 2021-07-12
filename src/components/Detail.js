@@ -110,16 +110,16 @@ const pokedexButtons = () => {
   console.log(leftButton);
   leftButton.addEventListener("click", () => {
     console.log("left clicked");
-    // let id = router.getParams().pokemonId;
-    // router.navigateTo(`/detail/${id - 1}`);
+    let id = router.getParams().pokemonId;
+    router.navigateTo(`/detail/${parseInt(id) - 1}`);
   })
 
   const rightButton = document.querySelector(".pokedex__button-right");
   // console.log(rightButton);
   rightButton.addEventListener("click", () => {
     console.log("right clicked");
-    // let id = router.getParams().pokemonId;
-    // router.navigateTo(`/detail/${id + 1}`);
+    let id = router.getParams().pokemonId;
+    router.navigateTo(`/detail/${parseInt(id) + 1}`);
   })
 
 }

@@ -3,17 +3,14 @@ import { getParams } from 'router';
 import { getPokemon } from 'utils/fetchData';
 
 
-
-
 const DetailPage = async () => {
   const { pokemonId } = getParams();
   const pokemon = await getPokemon(pokemonId);
   return Detail(pokemon);
 };
 
-// Detailpage.afterRender = async () => {
-//   Detail.afterRender();
-
-// }
+DetailPage.afterRender = async () => {
+  pokedexButtons();
+}
 
 export default DetailPage;
