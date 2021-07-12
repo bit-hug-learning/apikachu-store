@@ -10,6 +10,7 @@ import paginateArray from 'utils/paginateArray';
 import { setAllPokemons } from 'context/actions';
 import {Card, Wished, CardToDetail}  from '../components/Card';
 import FilterIcon from '../assets/icons/filter.png';
+// import { Detail, pokedexButtons } from 'components/Detail';
 
 const Home = () => html`
   <div class="home">
@@ -45,7 +46,7 @@ Home.afterRender = async () => {
       .map((pokemon) => Card(pokemon))
       .join('');
     CardToDetail();  
-    Wished();  
+    Wished(); 
   });
 
   const pokemons = await getPokemonByRange(1, 151);

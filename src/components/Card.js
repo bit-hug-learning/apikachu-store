@@ -1,7 +1,7 @@
 import '../styles/components/card.scss';
 import pokemonTypes from '../utils/pokemonTypes';
 import Button from './Button';
-import router from '../router'
+import router from '../router';
 
 function Card({ image, id, name, types = [], weight } = {}) {
 

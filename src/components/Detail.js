@@ -7,6 +7,9 @@ import pokedexHingeV from '../assets/images/pokedex_hinge-v.svg';
 import leftArrow from '../assets/icons/leftArrow.svg';
 import pokemonTypes from '../utils/pokemonTypes';
 import Button from '../components/Button';
+import router from 'router';
+
+
 
 function Stats(stats) {
   return stats
@@ -40,14 +43,14 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
             </div>
 
             <div class="pokedex__buttons">
-              <button>
+              <button class="pokedex__button-left">
                 <img src="${leftArrow}" alt="" />
                 <div class="pokedex__container-buttons"></div>
               </button>
               <div class="pokedex__frame-container">
                 <div class="pokedex__price">$ ${weight / 100}</div>
               </div>
-              <button>
+              <button class="pokedex__button-right">
                 <img src="${leftArrow}" alt="" />
                 <div class="pokedex__container-buttons"></div>
               </button>
@@ -100,4 +103,26 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
   `;
 }
 
-export default Detail;
+const pokedexButtons = () => {
+  console.log("pokedexButtons");
+
+  const leftButton = document.querySelector(".pokedex__button-left");
+  console.log(leftButton);
+  leftButton.addEventListener("click", () => {
+    console.log("left clicked");
+    // let id = router.getParams().pokemonId;
+    // router.navigateTo(`/detail/${id - 1}`);
+  })
+
+  const rightButton = document.querySelector(".pokedex__button-right");
+  // console.log(rightButton);
+  rightButton.addEventListener("click", () => {
+    console.log("right clicked");
+    // let id = router.getParams().pokemonId;
+    // router.navigateTo(`/detail/${id + 1}`);
+  })
+
+}
+
+
+export { Detail, pokedexButtons };
