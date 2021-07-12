@@ -2,7 +2,7 @@ import Filter from 'components/Filter';
 import Hero from 'components/Hero';
 import Pagination from 'components/Pagination';
 import 'styles/components/home.scss';
-import Order from 'components/Order';
+import Order, { orderMinMax } from 'components/Order';
 import SearchBar from 'components/SearchBar';
 import { getPokemonByRange } from 'utils/fetchData';
 import store from 'context/index';
@@ -34,15 +34,18 @@ Home.afterRender = async () => {
   Filter.afterRender();
   Pagination.afterRender();
 
+  orderMinMax()
+  
   const homeCards = document.querySelector('.home__cards');
   store.subscribe((state) => {
     homeCards.innerHTML = paginateArray(
       state.filteredPokemons,
       state.pagination,
       12
-    )
+      )
       .map((pokemon) => Card(pokemon))
       .join('');
+      
   });
 
   const pokemons = await getPokemonByRange(1, 151);
