@@ -10,6 +10,7 @@ import paginateArray from 'utils/paginateArray';
 import { setAllPokemons } from 'context/actions';
 import {Card, Wished, CardToDetail}  from '../components/Card';
 import FilterIcon from '../assets/icons/filter.png';
+import loader from '../assets/images/inner-loader.png'
 
 const Home = () => html`
   <div class="home">
@@ -24,7 +25,11 @@ const Home = () => html`
           </div>
           ${Order()} ${Pagination()}
         </div>
-        <div class="home__cards"></div>
+        <div class="home__cards">
+          <div class="home__cards-loading">
+            <img src="${loader}" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </div>
