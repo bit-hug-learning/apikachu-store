@@ -1,9 +1,13 @@
 .hero {
-  background-color: var(--color-yellow);
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 517px;
+  @media (min-width: 768px) {
+    height: 364px;
+  }
   margin-bottom: 2rem;
+  background-color: var(--color-yellow);
 
   &__image {
     margin-bottom: 2rem;

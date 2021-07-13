@@ -20,6 +20,9 @@
     position: relative;
 
   }
+  // &__top {
+  //   background-size: 4.1px 16px;
+  // }
   &__hinge {
     @media (min-width:768px) {
       display: none;

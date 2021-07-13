@@ -10,7 +10,6 @@ import paginateArray from 'utils/paginateArray';
 import { setAllPokemons } from 'context/actions';
 import {Card, Wished, CardToDetail}  from '../components/Card';
 import FilterIcon from '../assets/icons/filter.png';
-// import { Detail, pokedexButtons } from 'components/Detail';
 
 const Home = () => html`
   <div class="home">
