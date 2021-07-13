@@ -61,9 +61,9 @@ const CardToDetail = () =>{
     element.addEventListener("click", () => {
       console.log("clicked");
       let str = element.firstChild.getAttribute("src");
-      let id = str.split(".svg")[0].slice(-1);
+      let id = str.split("/").pop().split(".svg")[0];
+      console.log(id);
       router.navigateTo(`./detail/${id}`);
-
     });
   });
 

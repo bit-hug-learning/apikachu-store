@@ -29,6 +29,7 @@ const addRoutes = (routes) => {
 export const navigateTo = (url) => {
   window.history.pushState(null, null, url);
   window.dispatchEvent(new Event('locationChange'));
+  document.documentElement.scrollTo(0,0);
 };
 
 const intersectLinks = () => {
