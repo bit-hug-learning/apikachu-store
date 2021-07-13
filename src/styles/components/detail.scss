@@ -12,17 +12,10 @@
   max-width: 1280px;
   &__top, &__right, &__hinge, &__bottom {
     width: 100%;
-    @media (min-width:768px) {
-      // width: 50%;
-    }
   }
   &__container-top {
     position: relative;
-
   }
-  // &__top {
-  //   background-size: 4.1px 16px;
-  // }
   &__hinge {
     @media (min-width:768px) {
       display: none;
