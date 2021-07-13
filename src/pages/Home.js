@@ -33,11 +33,7 @@ const Home = () => html`
 Home.afterRender = async () => {
   Filter.afterRender();
   Pagination.afterRender();
-<<<<<<< HEAD
-  
-=======
   SearchBar.afterRender();
->>>>>>> dev
 
   const homeCards = document.querySelector('.home__cards');
   store.subscribe((state) => {
