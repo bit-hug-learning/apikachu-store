@@ -12,13 +12,9 @@
   max-width: 1280px;
   &__top, &__right, &__hinge, &__bottom {
     width: 100%;
-    @media (min-width:768px) {
-      // width: 50%;
-    }
   }
   &__container-top {
     position: relative;
-
   }
   &__hinge {
     @media (min-width:768px) {
@@ -30,10 +26,11 @@
     @media (min-width:768px) {
       display: block;
       position: absolute;
-      top: 51%;
+      top: 53%;
       left: calc( 100% - .25vw - 2.1vw);
     }
     @media (min-width:1280px) {
+      top: 51%;
       left: calc( 100% - 30px);
     }
   }
@@ -52,9 +49,9 @@
       display: block;
       position: absolute;
       bottom: 0;
-      left: calc( -50vw + 1rem + 2.1vw + .25vw );
+      left: calc( -50vw + 1.7rem + 2.1vw + .25vw );
       z-index: -1;
-      width: calc( 100vw - 2rem );
+      width: calc( 100vw - 3.4rem );
       height: 200px;
       background-color: var(--color-pokedex);
       border-left: .5vw solid #742424;
@@ -63,7 +60,13 @@
       border-bottom-left-radius: 2.2vw;
       border-bottom-right-radius: 2.2vw;
     }
-    @media (min-width:1310px) {
+
+    @media (min-width:1280px) {
+      left: calc( -50vw + 1.7rem + 2.1vw + 0.17vw );
+      width: calc( 100vw - 3.4rem + 0.05vw);
+    }
+
+    @media (min-width:1335px) {
       left: calc(-610px);
       width: 1280px;
       border-left: 6px solid #742424;
@@ -229,7 +232,7 @@
     position: absolute;
     top: 14.5%;
     left: 14.5%;
-    z-index: 0;
+    z-index: 5;
     width: 70%;
     height: 70%;
     padding: 0;
@@ -423,11 +426,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 120px;
   margin: 13vw auto;
   margin-bottom: 40px;
+  font-size: 1.5rem;
   font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 
   @media (min-width: 1280px) {
     margin: calc(0.13 * 1280px) auto;

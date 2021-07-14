@@ -1,45 +1,72 @@
 .card {
   width: 100%;
+  @media (max-width: 319px) {
+    width: 80vw;
+  }
   max-width: 284px;
+  margin: 0 auto;
   border: 1px solid var(--color-black-20);
   border-radius: 21px;
 
   &__figure {
     position: relative;
+    height: 160px;
     border-top-left-radius: 21px;
     border-top-right-radius: 21px;
     background-color: var(--color-type-green);
-    height: 160px;
+    cursor: url("../../assets/images/pokecursor.png"), auto;
   }
 
   &__image {
     width: 35%;
     max-width: 100px;
-    // margin: 40px calc(65% / 2);
     height: 100%;
+    padding: 10px 0;
     object-fit: contain;
   }
 
   &__wish-list-icon {
+    display: inline-block;
     position: absolute;
     top: 0;
     right: 0;
-    margin: 15px;
-    cursor: pointer;
-    display: inline-block;
     width: 24px;
     height: 24px;
+    margin: 15px;
+    cursor: pointer;
     background: url('../../assets/icons/heart.svg') center/cover no-repeat;
+
+    &.clicked {
+      background: url('../../assets/icons/heart-active.png') center/cover no-repeat;
+    }
+  }
+
+  &__wish-list-icon:hover {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(9%) saturate(6620%) hue-rotate(321deg) brightness(116%) contrast(108%);
+  }
+
+  &__wish-list-icon:active {
+    background: url("../../assets/icons/heart-active.png") center/cover no-repeat ;
+    animation: grow .05s linear;
+  }
+
+  @keyframes grow {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(2);
+    }
   }
 
   &__body {
+    padding: 7px 12px;
     margin: 0;
-    padding: 7px 15px;
   }
 
   &__primary-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     @media (max-width: 285px) {
       flex-direction: column;
@@ -52,8 +79,8 @@
   }
 
   &__id {
-    color: var(--color-primary);
     padding-right: 5px;
+    color: var(--color-primary);
   }
 
   &__price {
@@ -62,10 +89,15 @@
     font-weight: 700;
   }
 
+  &__types {
+    display: flex;
+    justify-content: center;
+  }
+
   &__types img {
+    width: 40px;
     padding: 0 5px;
     vertical-align: middle;
-    width: 40px;
   }
 
   &__button .btn--add {

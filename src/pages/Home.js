@@ -3,13 +3,14 @@ import Hero from 'components/Hero';
 import Pagination from 'components/Pagination';
 import 'styles/components/home.scss';
 import Order from 'components/Order';
-import SearchBar from 'components/SearchBar';
 import { getPokemonByRange } from 'utils/fetchData';
 import store from 'context/index';
 import paginateArray from 'utils/paginateArray';
 import { setAllPokemons } from 'context/actions';
-import Card from '../components/Card';
+import {Card, Wished, CardToDetail}  from '../components/Card';
 import FilterIcon from '../assets/icons/filter.png';
+import loader from '../assets/images/inner-loader.png'
+import SearchBar from 'components/SearchBar';
 
 const Home = () => html`
   <div class="home">
@@ -20,11 +21,15 @@ const Home = () => html`
         <div class="home__controls">
           ${SearchBar()}
           <div class="filter__icon">
-            <img src="${FilterIcon}" alt="Filter" />
+            <img src="${FilterIcon}" alt="Filter icon" />
           </div>
           ${Order()} ${Pagination()}
         </div>
-        <div class="home__cards"></div>
+        <div class="home__cards">
+          <div class="home__cards-loading">
+            <img src="${loader}" alt="loader animation">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -33,6 +38,7 @@ const Home = () => html`
 Home.afterRender = async () => {
   Filter.afterRender();
   Pagination.afterRender();
+  SearchBar.afterRender();
 
   const homeCards = document.querySelector('.home__cards');
   store.subscribe((state) => {
@@ -43,6 +49,8 @@ Home.afterRender = async () => {
     )
       .map((pokemon) => Card(pokemon))
       .join('');
+    CardToDetail();  
+    Wished(); 
   });
 
   const pokemons = await getPokemonByRange(1, 151);

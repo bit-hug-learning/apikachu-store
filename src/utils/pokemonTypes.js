@@ -16,6 +16,7 @@ import psychicImg from 'assets/images/type_psychic.png';
 import rockImg from 'assets/images/type_rock.png';
 import steelImg from 'assets/images/type_steel.png';
 import waterImg from 'assets/images/type_water.png';
+import flyingImg from 'assets/images/type_flying.png';
 
 const pokemonTypes = {
   normal: {
@@ -25,13 +26,13 @@ const pokemonTypes = {
   },
   flying: {
     name: 'Flying',
-    image: normalImg,
-    color: 'var(--color-type-gray)',
+    image: flyingImg,
+    color: 'var(--color-type-blue-light)',
   },
   dark: {
     name: 'Dark',
     image: darkImg,
-    color: 'var(--color-type-gray)',
+    color: 'var(--color-type-gray-dark)',
   },
   steel: {
     name: 'Steel',
@@ -41,7 +42,7 @@ const pokemonTypes = {
   bug: {
     name: 'Bug',
     image: bugImg,
-    color: 'var(--color-type-green)',
+    color: 'var(--color-type-green-dark)',
   },
   grass: {
     name: 'Grass',
@@ -56,12 +57,12 @@ const pokemonTypes = {
   rock: {
     name: 'Rock',
     image: rockImg,
-    color: 'var(--color-type-yellow)',
+    color: 'var(--color-type-gray-dark)',
   },
   ground: {
     name: 'Ground',
     image: groundImg,
-    color: 'var(--color-type-yellow)',
+    color: 'var(--color-type-yellow-dark)',
   },
   fire: {
     name: 'Fire',
@@ -71,12 +72,12 @@ const pokemonTypes = {
   fighting: {
     name: 'Fighting',
     image: fightingImg,
-    color: 'var(--color-type-red)',
+    color: 'var(--color-type-red-dark)',
   },
   ghost: {
     name: 'Ghost',
     image: ghostImg,
-    color: 'var(--color-type-blue)',
+    color: 'var(--color-type-blue-dark)',
   },
   water: {
     name: 'Water',
@@ -86,12 +87,12 @@ const pokemonTypes = {
   ice: {
     name: 'Ice',
     image: iceImg,
-    color: 'var(--color-type-blue)',
+    color: 'var(--color-type-blue-light)',
   },
   dragon: {
     name: 'Dragon',
     image: dragonImg,
-    color: 'var(--color-type-blue)',
+    color: 'var(--color-type-blue-dark)',
   },
   poison: {
     name: 'Poison',
@@ -101,12 +102,12 @@ const pokemonTypes = {
   psychic: {
     name: 'Psychic',
     image: psychicImg,
-    color: 'var(--color-type-purple)',
+    color: 'var(--color-type-purple-dark)',
   },
   fairy: {
     name: 'Fairy',
     image: fairyImg,
-    color: 'var(--color-type-purple)',
+    color: 'var(--color-type-purple-light)',
   },
 };
 

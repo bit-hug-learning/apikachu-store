@@ -25,7 +25,11 @@
   }
 
   &__input {
-    width: 100px;
+    width: 80vw;
+    @media (min-width: 768px) {
+      width: 95%;
+    }
+
     border: none;
     outline: none;
     font-family: var(--font-family-montserrat);
