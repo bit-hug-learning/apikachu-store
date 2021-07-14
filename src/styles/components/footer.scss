@@ -113,6 +113,10 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 120px .1fr 35px;
 
+        &__us {
+            text-align: center;
+        }
+
         &__logo{
             width: 180px;
         }

@@ -26,9 +26,10 @@ const addRoutes = (routes) => {
  * changes the current location
  * @param {string} url
  */
-export const navigateTo = (url) => {
+export const navigateTo = (url, currentPage = false) => {
   window.history.pushState(null, null, url);
   window.dispatchEvent(new Event('locationChange'));
+  currentPage ? document.documentElement.scrollTo(0,0) : "";
 };
 
 const intersectLinks = () => {

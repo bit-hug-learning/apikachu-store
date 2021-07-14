@@ -1,9 +1,9 @@
 import '../styles/components/card.scss';
 import pokemonTypes from '../utils/pokemonTypes';
 import Button from './Button';
+import router from '../router';
 
 function Card({ image, id, name, types = [], weight } = {}) {
-  console.log(types[0]);
 
   return html`
     <article class="card">
@@ -11,8 +11,8 @@ function Card({ image, id, name, types = [], weight } = {}) {
         class="card__figure"
         style="background: ${pokemonTypes[types[0]].color}"
       >
-        <img class="card__image" src="${image}" alt="" />
-        <span class="card__wish-list-icon"></span>
+        <img class="card__image" src="${image}" alt="${name}" />
+        <span id="heart" class="card__wish-list-icon"></span>
       </div>
       <div class="card__body">
         <div class="card__primary-info">
@@ -37,6 +37,36 @@ function Card({ image, id, name, types = [], weight } = {}) {
       <div class="card__button">${Button('add to cart', 'btn btn--add')}</div>
     </article>
   `;
+
+}
+const Wished = () =>{
+  
+  const heart = document.querySelectorAll(".card__wish-list-icon");
+
+  heart.forEach(element => {
+    element.addEventListener("click", (event) => {
+      console.log("wished");
+      element.classList.toggle("clicked");
+      event.stopPropagation();
+    });
+
+  });
 }
 
-export default Card;
+const CardToDetail = () =>{
+  
+  const cards = document.querySelectorAll(".card__figure");
+  
+  cards.forEach(element => {
+    element.addEventListener("click", () => {
+      console.log("clicked");
+      let str = element.firstChild.getAttribute("src");
+      let id = str.split("/").pop().split(".svg")[0];
+      console.log(id);
+      router.navigateTo(`./detail/${id}`, true);
+    });
+  });
+
+}
+
+export { Card, Wished, CardToDetail };

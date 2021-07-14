@@ -31,8 +31,9 @@
     position: fixed;
     top: 80px;
     left: -100%;
+    z-index: 2;
     width: 80%;
-    height: 100vh;
+    height: 300px;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -41,16 +42,28 @@
     box-shadow: 1px -1px 24px var(--color-black-60);
   }
   &__item {
-    margin: 40px 0;
+    margin: 20px 0;
+    // height: 200px;
     text-transform: uppercase;
     list-style: none;
     //Hijos de la lista que no tiene que estar en el menu ya que estan los iconos
-    &:nth-child(2) {
-      display: none;
-    }
     &:nth-child(3) {
       display: none;
     }
+    &:nth-child(4) {
+      display: none;
+    }
+
+    .item__home {
+      display: inline-block;    
+      img {
+        width: 70px;
+        height: 20px;
+        padding-left: 5px;
+        vertical-align: middle;
+      }
+    }
+
   }
   &__link {
     font-weight: bold;
@@ -110,6 +123,10 @@
       display: none;
     }
     &:nth-child(5) {
+      display: none;
+    }
+
+    &.menu__home {
       display: none;
     }
   }
