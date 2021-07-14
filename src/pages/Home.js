@@ -21,13 +21,13 @@ const Home = () => html`
         <div class="home__controls">
           ${SearchBar()}
           <div class="filter__icon">
-            <img src="${FilterIcon}" alt="Filter" />
+            <img src="${FilterIcon}" alt="Filter icon" />
           </div>
           ${Order()} ${Pagination()}
         </div>
         <div class="home__cards">
           <div class="home__cards-loading">
-            <img src="${loader}" alt="">
+            <img src="${loader}" alt="loader animation">
           </div>
         </div>
       </div>

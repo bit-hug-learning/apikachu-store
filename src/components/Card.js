@@ -11,7 +11,7 @@ function Card({ image, id, name, types = [], weight } = {}) {
         class="card__figure"
         style="background: ${pokemonTypes[types[0]].color}"
       >
-        <img class="card__image" src="${image}" alt="" />
+        <img class="card__image" src="${image}" alt="${name}" />
         <span id="heart" class="card__wish-list-icon"></span>
       </div>
       <div class="card__body">

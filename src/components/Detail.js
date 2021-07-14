@@ -32,7 +32,7 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
           <div class="pokedex__content-1">
             <div class="pokedex__frame-container">
               <div class="pokedex__image">
-                <img src="${image}" alt="" />
+                <img src="${image}" alt="${name}" />
               </div>
             </div>
 
@@ -44,14 +44,14 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
 
             <div class="pokedex__buttons">
               <button class="pokedex__button-left">
-                <img src="${leftArrow}" alt="" />
+                <img src="${leftArrow}" alt="left button" />
                 <div class="pokedex__container-buttons"></div>
               </button>
               <div class="pokedex__frame-container">
                 <div class="pokedex__price">$ ${weight / 100}</div>
               </div>
               <button class="pokedex__button-right">
-                <img src="${leftArrow}" alt="" />
+                <img src="${leftArrow}" alt="right button" />
                 <div class="pokedex__container-buttons"></div>
               </button>
             </div>

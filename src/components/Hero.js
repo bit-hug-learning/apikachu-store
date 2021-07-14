@@ -14,7 +14,7 @@ function Hero() {
           <picture>
             <source srcset="${imageTablet}" media="(min-width: 1280px)"/>
             <source srcset="${imageTablet}" media="(min-width: 768px)"/>
-            <img src="${imageMobile}" />
+            <img src="${imageMobile}" alt="pikachu hero image"/>
           </picture>
         </div>
         <div class="hero__text">       
