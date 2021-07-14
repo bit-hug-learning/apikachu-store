@@ -12,9 +12,8 @@ function Hero() {
     <div class="hero">
         <div class="hero__image">
           <picture>
-            <source srcset="${imageTablet}" media="(min-width: 1280px)"/>
-            <source srcset="${imageTablet}" media="(min-width: 768px)"/>
-            <img src="${imageMobile}" alt="pikachu hero image"/>
+            <source srcset="${imageTablet}" media="(min-width: 768px)" width="550px" height="360"/>
+            <img src="${imageMobile}" alt="pikachu hero image" width="320px" height="309"/>
           </picture>
         </div>
         <div class="hero__text">       
