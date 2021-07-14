@@ -29,7 +29,6 @@ const addRoutes = (routes) => {
 export const navigateTo = (url, currentPage = false) => {
   window.history.pushState(null, null, url);
   window.dispatchEvent(new Event('locationChange'));
-  console.log(url);
   currentPage ? document.documentElement.scrollTo(0,0) : "";
 };
 

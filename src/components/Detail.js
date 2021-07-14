@@ -104,25 +104,27 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
 }
 
 const pokedexButtons = () => {
-  console.log("pokedexButtons");
 
-  const leftButton = document.querySelector(".pokedex__button-left");
-  console.log(leftButton);
-  leftButton.addEventListener("click", () => {
-    console.log("left clicked");
-    let id = router.getParams().pokemonId;
-    router.navigateTo(`/detail/${parseInt(id) - 1}`);
-  })
+  const buttons = (direction, className) => {
+    const buttonX = document.querySelector(`.${className}`);
 
-  const rightButton = document.querySelector(".pokedex__button-right");
-  // console.log(rightButton);
-  rightButton.addEventListener("click", () => {
-    console.log("right clicked");
-    let id = router.getParams().pokemonId;
-    router.navigateTo(`/detail/${parseInt(id) + 1}`);
-  })
+    buttonX.addEventListener("click", () => {
+
+      console.log(direction);
+      let id = parseInt(router.getParams().pokemonId);
+      if(direction === "leftButton") {
+        id == 1 ? id = 151 : id--;
+      }
+      else {
+        id == 151 ? id = 1 : id++;
+      }
+      router.navigateTo(`/detail/${id}`);
+    })
+  }
+  
+  buttons("leftButton", "pokedex__button-left");
+  buttons("rightButton", "pokedex__button-right");
 
 }
-
 
 export { Detail, pokedexButtons };
