@@ -98,7 +98,7 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
         ${Button('Shop now', 'btn btn--buy', true)}
       </div>
 
-      <div class="back-to-home"><span></span>Back</div>
+      <a class="back-to-home" href="/" data-link><span></span>Back</a>
     </div>
   `;
 }

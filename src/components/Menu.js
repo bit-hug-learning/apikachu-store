@@ -5,7 +5,6 @@ import WishIcon from '../assets/icons/wish_icon.svg';
 import BagIcon from '../assets/icons/bag_icon.svg';
 import VectorIcon from '../assets/icons/Vector.svg';
 import HamburgerIcon from '../assets/icons/hamburger.svg';
-import router from '../router';
 
 /**
  * @param {{number:int}} props
@@ -25,8 +24,8 @@ function Menu({ number }) {
           </a>
         </div>
         <ul class="menu__list">
-          <li class="menu__item">
-            <a class="menu__link" href="${router.navigateTo("/")}">Home<span class="menu__icon item__home"
+          <li class="menu__item menu__home">
+            <a class="menu__link" href="/" data-link>Home<span class="menu__icon item__home"
             ><img src=${ApikachuLogo} alt="Apikachu logo" /></span
             ></a>
           </li>

@@ -125,6 +125,10 @@
     &:nth-child(5) {
       display: none;
     }
+
+    &.menu__home {
+      display: none;
+    }
   }
   .menu__link {
     font-weight: normal;

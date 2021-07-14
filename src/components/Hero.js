@@ -12,7 +12,8 @@ function Hero() {
     <div class="hero">
         <div class="hero__image">
           <picture>
-            <source srcset="${imageTablet}" media="(min-width: 764px)"/>
+            <source srcset="${imageTablet}" media="(min-width: 1280px)"/>
+            <source srcset="${imageTablet}" media="(min-width: 768px)"/>
             <img src="${imageMobile}" />
           </picture>
         </div>

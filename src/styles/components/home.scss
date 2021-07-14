@@ -9,6 +9,9 @@
   &__controls {
     display: flex;
     flex-wrap: wrap;
+    @media (max-width: 319px) {
+      width: 100vw;
+    }
     padding: 1rem;
     justify-content: space-between;
     align-items: center;

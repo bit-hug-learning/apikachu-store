@@ -426,11 +426,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 120px;
   margin: 13vw auto;
   margin-bottom: 40px;
+  font-size: 1.5rem;
   font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 
   @media (min-width: 1280px) {
     margin: calc(0.13 * 1280px) auto;
