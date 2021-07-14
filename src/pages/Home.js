@@ -11,8 +11,12 @@ import {Card, Wished, CardToDetail}  from '../components/Card';
 import FilterIcon from '../assets/icons/filter.png';
 import loader from '../assets/images/inner-loader.png'
 import SearchBar from 'components/SearchBar';
+import seo from 'utils/seo';
 
-const Home = () => html`
+const Home = () => {
+  seo({title:"Home"})
+  
+  return html`
   <div class="home">
     ${Hero()}
     <div class="home__container">
@@ -33,7 +37,7 @@ const Home = () => html`
       </div>
     </div>
   </div>
-`;
+`;}
 
 Home.afterRender = async () => {
   Filter.afterRender();
