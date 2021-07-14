@@ -9,7 +9,7 @@ function Footer() {
   return html`
     <footer class="footer">
       <a href="/" class="footer__logo" data-link>
-        <img src="${storeLogo}" alt="Apikachu Store" />
+        <img src="${storeLogo}" alt="Apikachu Store" width="180px" height="57px"/>
       </a>
       <ul class="footer__sections">
         <li><a href="#" >Home</a></li>
@@ -19,7 +19,7 @@ function Footer() {
       <div class="footer__us">
         <p>Designed And Coded By:</p>
         <a class="footer__us-logo" href="https://bit-hug.com">
-          <img src="${usLogo}" alt="BitHug"/>
+          <img src="${usLogo}" alt="BitHug" width="55px" height="56px"/>
         </a>
       </div>
       <div class="footer__social">

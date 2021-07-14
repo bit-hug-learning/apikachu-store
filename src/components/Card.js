@@ -4,7 +4,6 @@ import Button from './Button';
 import router from '../router';
 
 function Card({ image, id, name, types = [], weight } = {}) {
-
   return html`
     <article class="card">
       <div
@@ -24,11 +23,16 @@ function Card({ image, id, name, types = [], weight } = {}) {
             <img
               src="${pokemonTypes[types[0]].image}"
               alt="${pokemonTypes[types[0]].name}"
+              width="30px"
+              height="30px"
             />
             ${types[1]
-              ? `<img src="${pokemonTypes[types[1]].image}" alt="${
-                  pokemonTypes[types[1]].name
-                }" />`
+              ? html`<img
+                  src="${pokemonTypes[types[1]].image}"
+                  alt="${pokemonTypes[types[1]].name}"
+                  width="30px"
+                  height="30px"
+                />`
               : ''}
           </span>
         </div>
@@ -37,36 +41,31 @@ function Card({ image, id, name, types = [], weight } = {}) {
       <div class="card__button">${Button('add to cart', 'btn btn--add')}</div>
     </article>
   `;
-
 }
-const Wished = () =>{
-  
-  const heart = document.querySelectorAll(".card__wish-list-icon");
+const Wished = () => {
+  const heart = document.querySelectorAll('.card__wish-list-icon');
 
-  heart.forEach(element => {
-    element.addEventListener("click", (event) => {
-      console.log("wished");
-      element.classList.toggle("clicked");
+  heart.forEach((element) => {
+    element.addEventListener('click', (event) => {
+      console.log('wished');
+      element.classList.toggle('clicked');
       event.stopPropagation();
     });
-
   });
-}
+};
 
-const CardToDetail = () =>{
-  
-  const cards = document.querySelectorAll(".card__figure");
-  
-  cards.forEach(element => {
-    element.addEventListener("click", () => {
-      console.log("clicked");
-      let str = element.firstChild.getAttribute("src");
-      let id = str.split("/").pop().split(".svg")[0];
+const CardToDetail = () => {
+  const cards = document.querySelectorAll('.card__figure');
+
+  cards.forEach((element) => {
+    element.addEventListener('click', () => {
+      console.log('clicked');
+      let str = element.firstChild.getAttribute('src');
+      let id = str.split('/').pop().split('.svg')[0];
       console.log(id);
       router.navigateTo(`./detail/${id}`, true);
     });
   });
-
-}
+};
 
 export { Card, Wished, CardToDetail };
