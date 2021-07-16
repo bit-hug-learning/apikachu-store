@@ -26,9 +26,11 @@ const addRoutes = (routes) => {
  * changes the current location
  * @param {string} url
  */
-export const navigateTo = (url) => {
-  window.history.pushState(null, null, url);
+export const navigateTo = (url, currentPage = false, replace = false) => {
+  if (replace) window.history.replaceState(null, null, url);
+  else window.history.pushState(null, null, url);
   window.dispatchEvent(new Event('locationChange'));
+  currentPage ? document.documentElement.scrollTo(0, 0) : '';
 };
 
 const intersectLinks = () => {
@@ -55,7 +57,9 @@ const matchRoutes = (pathname) => {
 
 const renderPage = async () => {
   const { pathname } = window.location;
-  if (pathname[pathname.length - 1] !== '/') return navigateTo(`${pathname}/`);
+  if (pathname[pathname.length - 1] !== '/')
+    return navigateTo(`${pathname}/`, false, true);
+
   const match = matchRoutes(pathname);
   if (!match) mainContentEl.innerHTML = await notFoundComponent();
   else {
@@ -75,7 +79,10 @@ export const init = ({ routes, appContainer, layout, notFound }) => {
   // events
   document.addEventListener('DOMContentLoaded', renderPage);
   window.addEventListener('locationChange', renderPage);
-  window.addEventListener('popstate', renderPage);
+  window.addEventListener('popstate', () => {
+    console.log('popstate');
+    renderPage();
+  });
 };
 
 /**
