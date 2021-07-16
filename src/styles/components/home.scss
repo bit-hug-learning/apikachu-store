@@ -23,6 +23,12 @@
     .pagination {
       width: 100%;
     }
+
+    @media (min-width: 768px) {
+      .pagination {
+        width: auto;
+      }
+    }
   }
 
   &__cards-loading {
@@ -32,7 +38,7 @@
     width: 300px;
     height: 300px;
     margin: 0 auto;
-    background: url("../../assets/icons/loader.svg") center/cover no-repeat;
+    background: url('../../assets/icons/loader.svg') center/cover no-repeat;
 
     img {
       width: 175px;
@@ -66,6 +72,5 @@
     @media (min-width: 1280px) {
       grid-template-columns: repeat(3, minmax(250px, 1fr));
     }
-    
   }
 }

@@ -30,6 +30,7 @@ const Home = () => html`
             <img src="${loader}" alt="loader animation">
           </div>
         </div>
+        ${Pagination()}
       </div>
     </div>
   </div>
