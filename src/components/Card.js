@@ -1,18 +1,17 @@
 import '../styles/components/card.scss';
 import pokemonTypes from '../utils/pokemonTypes';
 import Button from './Button';
+import router from '../router';
 
 function Card({ image, id, name, types = [], weight } = {}) {
-  console.log(types[0]);
-
   return html`
     <article class="card">
       <div
         class="card__figure"
         style="background: ${pokemonTypes[types[0]].color}"
       >
-        <img class="card__image" src="${image}" alt="" />
-        <span class="card__wish-list-icon"></span>
+        <img class="card__image" src="${image}" alt="${name}" />
+        <span id="heart" class="card__wish-list-icon"></span>
       </div>
       <div class="card__body">
         <div class="card__primary-info">
@@ -24,11 +23,16 @@ function Card({ image, id, name, types = [], weight } = {}) {
             <img
               src="${pokemonTypes[types[0]].image}"
               alt="${pokemonTypes[types[0]].name}"
+              width="30px"
+              height="30px"
             />
             ${types[1]
-              ? `<img src="${pokemonTypes[types[1]].image}" alt="${
-                  pokemonTypes[types[1]].name
-                }" />`
+              ? html`<img
+                  src="${pokemonTypes[types[1]].image}"
+                  alt="${pokemonTypes[types[1]].name}"
+                  width="30px"
+                  height="30px"
+                />`
               : ''}
           </span>
         </div>
@@ -38,5 +42,30 @@ function Card({ image, id, name, types = [], weight } = {}) {
     </article>
   `;
 }
+const Wished = () => {
+  const heart = document.querySelectorAll('.card__wish-list-icon');
 
-export default Card;
+  heart.forEach((element) => {
+    element.addEventListener('click', (event) => {
+      console.log('wished');
+      element.classList.toggle('clicked');
+      event.stopPropagation();
+    });
+  });
+};
+
+const CardToDetail = () => {
+  const cards = document.querySelectorAll('.card__figure');
+
+  cards.forEach((element) => {
+    element.addEventListener('click', () => {
+      console.log('clicked');
+      let str = element.firstChild.getAttribute('src');
+      let id = str.split('/').pop().split('.svg')[0];
+      console.log(id);
+      router.navigateTo(`./detail/${id}`, true);
+    });
+  });
+};
+
+export { Card, Wished, CardToDetail };

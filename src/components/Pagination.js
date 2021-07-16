@@ -5,12 +5,19 @@ import 'styles/components/pagination.scss';
 import Arrow from './Arrow';
 
 const PaginationButtons = ({ numberOfPages, current }) => {
-  let pages = [1, 2, 3, '...', numberOfPages];
+  let pages = []
+  if (numberOfPages >= 5) {
+    pages = [1, 2, 3, '...', numberOfPages];
 
-  if (current > 3) pages = [1, '...', current, '...', numberOfPages];
+    if (current > 3) pages = [1, '...', current, '...', numberOfPages];
 
-  if (current > numberOfPages - 3) {
-    pages = [1, '...', numberOfPages - 2, numberOfPages - 1, numberOfPages];
+    if (current > numberOfPages - 3) {
+      pages = [1, '...', numberOfPages - 2, numberOfPages - 1, numberOfPages];
+    }
+  } else {
+    for(let i = 1; i <= numberOfPages; i++) {
+      pages.push(i);
+    }
   }
 
   return html`

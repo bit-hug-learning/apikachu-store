@@ -16,14 +16,19 @@ function Menu({ number }) {
       <nav class="menu__nav">
         <input type="checkbox" id="check" />
         <label for="check" class="checkbtn">
-          <img src="${HamburgerIcon}" alt="Hamburger Icon" />
+          <img src="${HamburgerIcon}" alt="Hamburger Icon"/>
         </label>
         <div class="menu__container-logo">
           <a href="/" data-link>
-            <img menu="menu__logo" src=${ApikachuLogo} alt="Logo" />
+            <img menu="menu__logo" src=${ApikachuLogo} alt="Logo" width="180px" height="57px" />
           </a>
         </div>
         <ul class="menu__list">
+          <li class="menu__item menu__home">
+            <a class="menu__link" href="/" data-link>Home<span class="menu__icon item__home"
+            ><img src=${ApikachuLogo} alt="Apikachu logo" /></span
+            ></a>
+          </li>
           <li class="menu__item">
             <span class="menu__icon"
               ><img src=${UserIcon} alt="User icon" /></span
