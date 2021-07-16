@@ -6,7 +6,6 @@
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: center;
-    margin-left: auto;
   }
 }
 
@@ -14,10 +13,6 @@
   position: relative;
   display: inline-block;
   z-index: 1;
-  margin: 15px 0;
-  @media (min-width: 768px) {
-    margin: 25px 0;
-  }
 }
 
 .order-button {

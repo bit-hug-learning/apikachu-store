@@ -1,6 +1,7 @@
 .pagination {
   display: flex;
   justify-content: space-between;
+  margin: 1rem 0;
 
   button {
     width: 32px;
@@ -27,5 +28,9 @@
       border-color: #919eab;
       color: #fff;
     }
+  }
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
   }
 }
