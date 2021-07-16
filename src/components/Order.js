@@ -3,7 +3,7 @@ import Pagination from './Pagination';
 import SearchBar from './SearchBar';
 import store from '../context/index'
 
-export const orderMinMax = () => {
+const orderMinMax = () => {
   const el = document.getElementById("min-max")
 
   el.addEventListener("click", () => {
@@ -38,13 +38,13 @@ function Order() {
         </button>
         <div class="dropdown-content">
           <a class="dropdown-content__min-max" id="min-max">Min-Max</a>
-          <a class="dropdown-content__max-min" href="#" id="max-min">Max-Min</a>
-          <a class="dropdown-content__a-z" href="#" id="a-z">A - Z</a>
-          <a class="dropdown-content__z-a" href="#" id="z-a">Z - A</a>
+          <a class="dropdown-content__max-min" id="max-min">Max-Min</a>
+          <a class="dropdown-content__a-z" id="a-z">A - Z</a>
+          <a class="dropdown-content__z-a" id="z-a">Z - A</a>
         </div>
       </div>
     </div>
   `;
 }
 
-export default Order;
+export { Order, ;
