@@ -40,7 +40,8 @@
   display: none;
   position: absolute;
   min-width: 137px;
-  background-color: #fffadb;
+  background-color: #ffecec;
+  cursor: pointer;
 }
 
 .dropdown:hover .dropdown-content {
@@ -56,5 +57,10 @@
 }
 
 .dropdown-content a:hover {
-  background-color: #fdf0a4;
+  background-color: #ffcdcd;
+  display: block;
+}
+.dropdown-content.dr {
+  display: none;
+
 }
