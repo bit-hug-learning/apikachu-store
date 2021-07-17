@@ -1,4 +1,4 @@
-@import '../../../node_modules/@yaireo/ui-range/ui-range.scss';
+@import "../../../node_modules/@yaireo/ui-range/ui-range.scss";
 
 // .filter {
 //   position: relative;
@@ -54,7 +54,7 @@
       width: 1em;
       border: 1px solid var(--color-black-20);
     }
-    input[type='number'] {
+    input[type="number"] {
       width: 6.5em;
       height: 2.5em;
       padding: 0.5em;
@@ -78,7 +78,7 @@
       width: fit-content;
     }
 
-    input[type='checkbox'] {
+    input[type="checkbox"] {
       width: 1.1em;
       height: 1.1em;
       margin-right: 0.6em;
@@ -97,6 +97,7 @@
     display: flex;
     background-color: white;
     left: 0;
+    top: 105px;
     z-index: 100;
   }
 
