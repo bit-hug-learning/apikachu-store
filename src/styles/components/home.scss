@@ -1,5 +1,6 @@
 .home {
   &__container {
+    position: relative;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -66,6 +67,5 @@
     @media (min-width: 1280px) {
       grid-template-columns: repeat(3, minmax(250px, 1fr));
     }
-    
   }
 }
