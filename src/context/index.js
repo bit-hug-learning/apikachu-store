@@ -15,7 +15,7 @@ const filters = {
   },
   types: ['normal'],
   search: '',
-},
+};
 
 const store = createStore(initialState);
 
