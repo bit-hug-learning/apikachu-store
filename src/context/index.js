@@ -3,6 +3,7 @@ import createStore from 'utils/store';
 const initialState = {
   allPokemons: [],
   filteredPokemons: [],
+  favorites: [],
   isFiltered : false,
   pagination: 1,
 };
