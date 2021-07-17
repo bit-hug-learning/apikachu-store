@@ -8,7 +8,7 @@ import { getPokemonByRange } from 'utils/fetchData';
 import store from 'context/index';
 import paginateArray from 'utils/paginateArray';
 import { setAllPokemons } from 'context/actions';
-import {Card, Wished, CardToDetail}  from '../components/Card';
+import {Card, Wished, CardToDetail, addToCartButton}  from '../components/Card';
 import FilterIcon from '../assets/icons/filter.png';
 import loader from '../assets/images/inner-loader.png'
 import seo from 'utils/seo';
@@ -58,10 +58,14 @@ Home.afterRender = async () => {
       .join('');
     CardToDetail();  
     Wished(); 
+    addToCartButton();
   });
 
   const pokemons = await getPokemonByRange(1, 151);
   setAllPokemons(pokemons);
 };
+
+
+
 
 export default Home;

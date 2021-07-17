@@ -3,6 +3,8 @@ import pokemonTypes from '../utils/pokemonTypes';
 import Button from './Button';
 import router from '../router';
 import store from 'context/index';
+import Menu from '../components/Menu';
+import Layout from './Layout';
 
 function Card({ image, id, name, types = [], weight } = {}) {
   const { favorites } = store.get()
@@ -80,4 +82,20 @@ const CardToDetail = () => {
   });
 };
 
-export { Card, Wished, CardToDetail };
+
+const addToCartButton = () => {
+  const cardButton = document.querySelectorAll(".card__button");
+  cardButton.forEach((element) => {
+    element.addEventListener("click", () => {
+      console.log("clickeó");
+      const alertBox = document.createElement("div");
+      alertBox.textContent = "Added to Cart";
+      element.appendChild(alertBox);
+      alertBox.setAttribute("class", "card__added-to-cart")
+      setTimeout(() => { element.removeChild(alertBox) }, 2000)
+    })
+  })
+
+}
+
+export { Card, Wished, CardToDetail, addToCartButton };

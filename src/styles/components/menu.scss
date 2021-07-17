@@ -16,6 +16,7 @@
   height: 80px;
   width: 100%;
   padding-bottom: 16px;
+
   &__nav {
     display: flex;
     align-items: center;
@@ -51,7 +52,7 @@
       display: none;
     }
     &:nth-child(4) {
-      display: none;
+      // display: none;
     }
 
     .item__home {
@@ -74,6 +75,12 @@
 
 .menu__icon-item {
   margin-left: 20px;
+  cursor: pointer;
+
+}
+
+.checkbtn {
+  cursor: pointer;
 }
 
 #check:checked ~ .menu__list {
@@ -120,7 +127,7 @@
     }
     //Escondo los items que iban en el menu hamburger pero en el horizontal no van
     &:nth-child(4) {
-      display: none;
+      // display: none;
     }
     &:nth-child(5) {
       display: none;
