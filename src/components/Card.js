@@ -5,15 +5,12 @@ import router from '../router';
 import store from 'context/index';
 
 function Card({ image, id, name, types = [], weight } = {}) {
-<<<<<<< Updated upstream
-=======
   const { favorites } = store.get()
   console.log(favorites)
 
 
   const isClicked = favorites.includes(id)
 
->>>>>>> Stashed changes
   return html`
     <article class="card">
       <div
@@ -55,18 +52,11 @@ function Card({ image, id, name, types = [], weight } = {}) {
 const Wished = () => {
   const heart = document.querySelectorAll('.card__wish-list-icon');
 
-<<<<<<< Updated upstream
-  heart.forEach((element) => {
-    element.addEventListener('click', (event) => {
-      console.log('wished');
-      element.classList.toggle('clicked');
-=======
   heart.forEach(element => {
     element.addEventListener("click", (event) => {
       console.log("wished");
       element.classList.toggle("clicked");
       console.log(element.dataset)
->>>>>>> Stashed changes
       event.stopPropagation();
       store.set(state=>({
         ...state,
