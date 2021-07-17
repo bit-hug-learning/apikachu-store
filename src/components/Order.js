@@ -22,6 +22,14 @@ function Order() {
 
 const orderFunction = () => {
 
+  const orderBttn = document.querySelector(".order-button");
+  orderBttn.addEventListener("mouseenter",() => {
+    document.querySelector(".dropdown-content").style.display = "block";
+  })
+  document.querySelector(".dropdown").addEventListener("mouseleave",() => {
+    document.querySelector(".dropdown-content").style.display = "none";
+  })
+
   const orderItem = (className, itemContent) => {
     const blockName = ".dropdown-content__";
     const elem = document.querySelector(`${blockName}${className}`);
@@ -42,8 +50,7 @@ const orderFunction = () => {
           filteredPokemons: filteredPokemons.sort(fn)
         })
       }) 
-      // Removing list after clicking
-      // document.querySelector(".dropdown-content").style.display = "none";
+      document.querySelector(".dropdown-content").style.display = "none";
     })
     
   }

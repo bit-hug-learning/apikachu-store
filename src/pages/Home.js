@@ -11,7 +11,6 @@ import { setAllPokemons } from 'context/actions';
 import {Card, Wished, CardToDetail}  from '../components/Card';
 import FilterIcon from '../assets/icons/filter.png';
 import loader from '../assets/images/inner-loader.png'
-import SearchBar from 'components/SearchBar';
 import seo from 'utils/seo';
 
 const Home = () => {
