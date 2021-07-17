@@ -2,7 +2,8 @@ import Filter from 'components/Filter';
 import Hero from 'components/Hero';
 import Pagination from 'components/Pagination';
 import 'styles/components/home.scss';
-import Order from 'components/Order';
+import { Order, orderFunction } from 'components/Order';
+import SearchBar from 'components/SearchBar';
 import { getPokemonByRange } from 'utils/fetchData';
 import store from 'context/index';
 import paginateArray from 'utils/paginateArray';
@@ -10,7 +11,6 @@ import { setAllPokemons } from 'context/actions';
 import {Card, Wished, CardToDetail}  from '../components/Card';
 import FilterIcon from '../assets/icons/filter.png';
 import loader from '../assets/images/inner-loader.png'
-import SearchBar from 'components/SearchBar';
 import seo from 'utils/seo';
 
 const Home = () => {
@@ -34,6 +34,7 @@ const Home = () => {
             <img src="${loader}" alt="loader animation">
           </div>
         </div>
+        ${Pagination()}
       </div>
     </div>
   </div>
@@ -44,13 +45,15 @@ Home.afterRender = async () => {
   Pagination.afterRender();
   SearchBar.afterRender();
 
+  orderFunction()
+  
   const homeCards = document.querySelector('.home__cards');
   store.subscribe((state) => {
     homeCards.innerHTML = paginateArray(
       state.filteredPokemons,
       state.pagination,
       12
-    )
+      )
       .map((pokemon) => Card(pokemon))
       .join('');
     CardToDetail();  

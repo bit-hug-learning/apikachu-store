@@ -24,6 +24,12 @@
     .pagination {
       width: 100%;
     }
+
+    @media (min-width: 768px) {
+      .pagination {
+        width: auto;
+      }
+    }
   }
 
   &__cards-loading {
@@ -33,7 +39,7 @@
     width: 300px;
     height: 300px;
     margin: 0 auto;
-    background: url("../../assets/icons/loader.svg") center/cover no-repeat;
+    background: url('../../assets/icons/loader.svg') center/cover no-repeat;
 
     img {
       width: 175px;

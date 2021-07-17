@@ -2,8 +2,15 @@ import '../styles/components/card.scss';
 import pokemonTypes from '../utils/pokemonTypes';
 import Button from './Button';
 import router from '../router';
+import store from 'context/index';
 
 function Card({ image, id, name, types = [], weight } = {}) {
+  const { favorites } = store.get()
+  console.log(favorites)
+
+
+  const isClicked = favorites.includes(id)
+
   return html`
     <article class="card">
       <div
@@ -11,7 +18,7 @@ function Card({ image, id, name, types = [], weight } = {}) {
         style="background: ${pokemonTypes[types[0]].color}"
       >
         <img class="card__image" src="${image}" alt="${name}" />
-        <span id="heart" class="card__wish-list-icon"></span>
+        <span id="heart" class="card__wish-list-icon ${isClicked?'clicked':''}" data-pokemonid="${id}"></span>
       </div>
       <div class="card__body">
         <div class="card__primary-info">
@@ -45,11 +52,16 @@ function Card({ image, id, name, types = [], weight } = {}) {
 const Wished = () => {
   const heart = document.querySelectorAll('.card__wish-list-icon');
 
-  heart.forEach((element) => {
-    element.addEventListener('click', (event) => {
-      console.log('wished');
-      element.classList.toggle('clicked');
+  heart.forEach(element => {
+    element.addEventListener("click", (event) => {
+      console.log("wished");
+      element.classList.toggle("clicked");
+      console.log(element.dataset)
       event.stopPropagation();
+      store.set(state=>({
+        ...state,
+        favorites: [...state.favorites, parseInt(element.dataset.pokemonid)]
+      }))
     });
   });
 };
