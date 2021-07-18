@@ -8,9 +8,6 @@ import Layout from './Layout';
 
 function Card({ image, id, name, types = [], weight } = {}) {
   const { favorites } = store.get()
-  console.log(favorites)
-
-
   const isClicked = favorites.includes(id)
 
   return html`
@@ -56,14 +53,21 @@ const Wished = () => {
 
   heart.forEach(element => {
     element.addEventListener("click", (event) => {
-      console.log("wished");
-      element.classList.toggle("clicked");
-      console.log(element.dataset)
+      if(element.classList.contains('clicked')) {
+        element.classList.remove('clicked');
+        store.set((state)=>({
+          ...state,
+          favorites: state.favorites.filter(fav => fav !== parseInt(element.dataset.pokemonid))
+        }));
+      }else{
+        element.classList.add("clicked");
+        store.set(state=>({
+          ...state,
+          favorites: [...state.favorites, parseInt(element.dataset.pokemonid)]
+        }))
+      }
+      window.localStorage.setItem('favorites', JSON.stringify(store.get().favorites));
       event.stopPropagation();
-      store.set(state=>({
-        ...state,
-        favorites: [...state.favorites, parseInt(element.dataset.pokemonid)]
-      }))
     });
   });
 };
