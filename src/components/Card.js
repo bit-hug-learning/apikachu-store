@@ -89,15 +89,23 @@ const CardToDetail = () => {
 
 const addToCartButton = () => {
   const cardButton = document.querySelectorAll(".card__button");
+
   cardButton.forEach((element) => {
-    element.addEventListener("click", () => {
+    function createAlert() {
       console.log("clickeó");
       const alertBox = document.createElement("div");
       alertBox.textContent = "Added to Cart";
       element.appendChild(alertBox);
       alertBox.setAttribute("class", "card__added-to-cart")
-      setTimeout(() => { element.removeChild(alertBox) }, 2000)
-    })
+      setTimeout(() => { element.removeChild(alertBox) }, 2000);
+      element.removeEventListener("click", createAlert);
+      console.log(element.children[0])
+      const buttonDisabled = document.createElement("div");
+      buttonDisabled.innerHTML = Button('Already added to cart', 'btn btn--add', false, true);
+
+      element.children[0].replaceWith(buttonDisabled);
+    }
+    element.addEventListener("click", createAlert);     
   })
 
 }
