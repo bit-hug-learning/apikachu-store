@@ -5,6 +5,8 @@ import router from '../router';
 import store from 'context/index';
 import Layout from './Layout';
 import { Menu } from './Menu';
+import { ShoppingItem, shopping } from 'components/ShoppingItem';
+
 
 function Card({ image, id, name, types = [], weight } = {}) {
   const { favorites } = store.get()
@@ -48,6 +50,9 @@ function Card({ image, id, name, types = [], weight } = {}) {
     </article>
   `;
 }
+
+let counter = {fav: 0, cart: 0, idc: ""};
+
 const Wished = () => {
   const heart = document.querySelectorAll('.card__wish-list-icon');
   heart.forEach(element => {
@@ -56,6 +61,7 @@ const Wished = () => {
       console.log(element.classList.contains('clicked').length);
       if(element.classList.contains('clicked')) {
         --counter.fav;
+        Menu.afterRender(counter);
         element.classList.remove('clicked');
         store.set((state)=>({
           ...state,
@@ -64,13 +70,14 @@ const Wished = () => {
       }else{
         ++counter.fav;
         element.classList.add("clicked");
+        Menu.afterRender(counter);
+
         // console.log(element.dataset.pokemonid)
         store.set(state=>({
           ...state,
           favorites: [...state.favorites, parseInt(element.dataset.pokemonid)]
         }))
       }
-      Menu.afterRender(counter);
       window.localStorage.setItem('favorites', JSON.stringify(store.get().favorites));
       event.stopPropagation();
     });
@@ -89,7 +96,7 @@ const CardToDetail = () => {
   });
 };
 
-let counter = {fav: 0, cart: 0, idc: ""};
+
 
 const addToCart = () => {
   const cardButton = document.querySelectorAll(".card__button");
@@ -99,6 +106,9 @@ const addToCart = () => {
       counter.idc = element.dataset.pokemonid;
       ++counter.cart;
       Menu.afterRender(counter);
+      // console.log(counter.cart)
+      // ShoppingItem.afterRender(counter);
+      
 
       const alertBox = document.createElement("div");
       alertBox.textContent = "Added to Cart";

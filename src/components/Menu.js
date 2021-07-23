@@ -8,7 +8,7 @@ import HamburgerIcon from '../assets/icons/hamburger.svg';
 import { counter }  from '../components/Card';
 import Button from '../components/Button';
 import { getPokemon } from 'utils/fetchData';
-import ShoppingItem from './ShoppingItem';
+import { ShoppingItem, shopping } from 'components/ShoppingItem';
 
 
 /**
@@ -89,25 +89,38 @@ Menu.afterRender = async ({fav, cart, idc}) => {
 
   const bagItemValue = document.querySelector(".menu__bag-value");
   bagItemValue.innerHTML = cart;
-
+  
   const itemsContainer = document.querySelector(".menu__shopping-items-container");
 
-  const initialMsg = document.querySelector(".menu__shopping-empty-msg")
-  initialMsg.innerHTML = `<div>Picture</div>
-  <div>Name</div>
-  <div>Price</div>
-  <div style="width: 10px"></div>
-  `;
-  const item = document.createElement("div");
-
-  item.innerHTML = ShoppingItem(await getPokemon(idc));
-  itemsContainer.appendChild(item);
+  const initialMsg = document.querySelector(".menu__shopping-empty-msg");
+  if(cart > 0){
+    initialMsg.innerHTML = 
+    `<div>Picture</div>
+    <div>Name</div>
+    <div>Price</div>
+    <div style="width: 10px"></div>
+    `
+    ;
+    
+    const item = document.createElement("div");
+    const dataPoke = await getPokemon(idc);
+    item.innerHTML = ShoppingItem(dataPoke);
+    itemsContainer.appendChild(item);
+    ShoppingItem.afterRender(counter);
+  }
 }
 
 const shopCart = () => {
+  //to open the shopcart modal:
   const shoppingCartButton = document.querySelector(".menu__item--bag");
+  // const shopNowButton = document.querySelector("buton btn btn--buy btn--big");
   const shoppingModal = document.querySelector(".menu__shopping-cart");
+    //to open the shopcart modal:
   const closeIcon = document.querySelector(".menu__shopping-cart-close");
+  const continueButton = document.querySelector(".menu__shop-buttons");
+
+
+  // shoppingCartButton.removeEventListener("popstate", () => {})
 
     shoppingCartButton.addEventListener("click", () => {
       shoppingModal.classList.toggle("is-active");
@@ -118,12 +131,14 @@ const shopCart = () => {
         shoppingModal.classList.remove("is-active");
       }
     })
+
+    continueButton.addEventListener("click", () => {
+      if(shoppingModal.classList.contains("is-active")){
+      shoppingModal.classList.remove("is-active");
+      }
+    })
+
 }
 
-// const itemsContainer = document.querySelector(".menu__shopping-items-container");
-// console.log(counter.cart);
-
-
-// ${ShoppingItem(await getPokemon(counter.idc))}
 
 export { Menu, shopCart };

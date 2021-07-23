@@ -14,7 +14,7 @@ import loader from '../assets/images/inner-loader.png'
 import seo from 'utils/seo';
 import Layout from 'components/Layout';
 import { Menu, shopCart } from 'components/Menu';
-import ShoppingItem from 'components/ShoppingItem';
+import { ShoppingItem, shopping } from 'components/ShoppingItem';
 
 const Home = () => {
   seo({title:"Home"})
@@ -47,6 +47,7 @@ Home.afterRender = async () => {
   Filter.afterRender();
   Pagination.afterRender();
   SearchBar.afterRender();
+   
 
   orderFunction()
   
@@ -63,6 +64,7 @@ Home.afterRender = async () => {
     Wished(); 
     addToCart();
     shopCart();
+    // shopping();
    
   });
 

@@ -15,7 +15,9 @@
   &__item-name, &__item-price {
     width: 110px;
     font-size: 1rem;
-    background: white;
+    background: rgb(255, 215, 215);
+    border-radius: 4px;
+
   }
 
   &__item-price {

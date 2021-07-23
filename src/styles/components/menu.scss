@@ -79,7 +79,7 @@
   .menu__shopping-cart {
     position: absolute;
     top: 80px;
-    left: 65%;
+    left: 100%;
     z-index: 1;
     width: 400px;
     padding: 10px;
@@ -96,8 +96,7 @@
   }
   .menu__shopping-cart.is-active {
     display: inline-block;
-    left: calc(100vw - 600px);
-    // background-color: red;
+    left: calc(100vw - 400px);
     transition: .25s linear;
   }
 
