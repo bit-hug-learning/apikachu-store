@@ -1,0 +1,32 @@
+.shopping {
+  &__item-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+
+  }
+  
+  &__item-image {
+    width: 60px;
+  }
+
+  &__item-name, &__item-price {
+    width: 110px;
+    font-size: 1rem;
+    background: white;
+  }
+
+  &__item-price {
+    width: 80px;
+  }
+
+  &__item-delete {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../../assets/icons/delete.svg") center/cover no-repeat;
+    cursor: pointer;
+  }
+}

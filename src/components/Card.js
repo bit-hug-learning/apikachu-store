@@ -3,8 +3,8 @@ import pokemonTypes from '../utils/pokemonTypes';
 import Button from './Button';
 import router from '../router';
 import store from 'context/index';
-import Menu from '../components/Menu';
 import Layout from './Layout';
+import { Menu } from './Menu';
 
 function Card({ image, id, name, types = [], weight } = {}) {
   const { favorites } = store.get()
@@ -44,28 +44,33 @@ function Card({ image, id, name, types = [], weight } = {}) {
         </div>
         <div class="card__price">$ ${weight / 100}</div>
       </div>
-      <div class="card__button">${Button('add to cart', 'btn btn--add')}</div>
+      <div class="card__button" data-pokemonid="${id}">${Button('add to cart', 'btn btn--add')}</div>
     </article>
   `;
 }
 const Wished = () => {
   const heart = document.querySelectorAll('.card__wish-list-icon');
-
   heart.forEach(element => {
+
     element.addEventListener("click", (event) => {
+      console.log(element.classList.contains('clicked').length);
       if(element.classList.contains('clicked')) {
+        --counter.fav;
         element.classList.remove('clicked');
         store.set((state)=>({
           ...state,
           favorites: state.favorites.filter(fav => fav !== parseInt(element.dataset.pokemonid))
         }));
       }else{
+        ++counter.fav;
         element.classList.add("clicked");
+        // console.log(element.dataset.pokemonid)
         store.set(state=>({
           ...state,
           favorites: [...state.favorites, parseInt(element.dataset.pokemonid)]
         }))
       }
+      Menu.afterRender(counter);
       window.localStorage.setItem('favorites', JSON.stringify(store.get().favorites));
       event.stopPropagation();
     });
@@ -77,35 +82,39 @@ const CardToDetail = () => {
 
   cards.forEach((element) => {
     element.addEventListener('click', () => {
-      console.log('clicked');
       let str = element.firstChild.getAttribute('src');
       let id = str.split('/').pop().split('.svg')[0];
-      console.log(id);
       router.navigateTo(`./detail/${id}`, true);
     });
   });
 };
 
+let counter = {fav: 0, cart: 0, idc: ""};
 
-const addToCartButton = () => {
+const addToCart = () => {
   const cardButton = document.querySelectorAll(".card__button");
-
+  
   cardButton.forEach((element) => {
-    function createAlert() {
+    element.addEventListener("click", function createAlert() {
+      counter.idc = element.dataset.pokemonid;
+      ++counter.cart;
+      Menu.afterRender(counter);
+
       const alertBox = document.createElement("div");
       alertBox.textContent = "Added to Cart";
+      
       element.appendChild(alertBox);
       alertBox.setAttribute("class", "card__added-to-cart")
       setTimeout(() => { element.removeChild(alertBox) }, 2000);
       element.removeEventListener("click", createAlert);
-
+  
       const buttonDisabled = document.createElement("div");
       buttonDisabled.innerHTML = Button('Already added to cart', 'btn btn--add', false, true);
       element.children[0].replaceWith(buttonDisabled);
-    }
-    element.addEventListener("click", createAlert);     
+      
+    });     
   })
 
 }
 
-export { Card, Wished, CardToDetail, addToCartButton };
+export { Card, Wished, CardToDetail, addToCart, counter};

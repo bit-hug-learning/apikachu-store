@@ -6,6 +6,7 @@ const initialState = {
   favorites: JSON.parse(window.localStorage.getItem('favorites')) || [],
   isFiltered : false,
   pagination: 1,
+  cart: []
 };
 
 const filters = {

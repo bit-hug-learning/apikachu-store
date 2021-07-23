@@ -8,10 +8,13 @@ import { getPokemonByRange } from 'utils/fetchData';
 import store from 'context/index';
 import paginateArray from 'utils/paginateArray';
 import { setAllPokemons } from 'context/actions';
-import {Card, Wished, CardToDetail, addToCartButton}  from '../components/Card';
+import {Card, Wished, CardToDetail, addToCart}  from '../components/Card';
 import FilterIcon from '../assets/icons/filter.png';
 import loader from '../assets/images/inner-loader.png'
 import seo from 'utils/seo';
+import Layout from 'components/Layout';
+import { Menu, shopCart } from 'components/Menu';
+import ShoppingItem from 'components/ShoppingItem';
 
 const Home = () => {
   seo({title:"Home"})
@@ -58,7 +61,9 @@ Home.afterRender = async () => {
       .join('');
     CardToDetail();  
     Wished(); 
-    addToCartButton();
+    addToCart();
+    shopCart();
+   
   });
 
   const pokemons = await getPokemonByRange(1, 151);
