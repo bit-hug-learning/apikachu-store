@@ -12,41 +12,40 @@ import {Card, Wished, CardToDetail, addToCart}  from '../components/Card';
 import FilterIcon from '../assets/icons/filter.png';
 import loader from '../assets/images/inner-loader.png'
 import seo from 'utils/seo';
-import Layout from 'components/Layout';
-import { Menu, shopCart } from 'components/Menu';
-import { ShoppingItem, shopping } from 'components/ShoppingItem';
+
 
 const Home = () => {
   seo({title:"Home"})
   
   return html`
-  <div class="home">
-    ${Hero()}
-    <div class="home__container">
-      ${Filter()}
-      <div>
-        <div class="home__controls">
-          ${SearchBar()}
-          <div class="filter__icon">
-            <img src="${FilterIcon}" alt="Filter icon" />
+    <div class="home">
+      ${Hero()}
+      <div class="home__container">
+        ${Filter()}
+        <div>
+          <div class="home__controls">
+            ${SearchBar()}
+            <div class="filter__icon">
+              <img src="${FilterIcon}" alt="Filter icon" />
+            </div>
+            ${Order()} ${Pagination()}
           </div>
-          ${Order()} ${Pagination()}
-        </div>
-        <div class="home__cards">
-          <div class="home__cards-loading">
-            <img src="${loader}" alt="loader animation">
+          <div class="home__cards">
+            <div class="home__cards-loading">
+              <img src="${loader}" alt="loader animation">
+            </div>
           </div>
+          ${Pagination()}
         </div>
-        ${Pagination()}
       </div>
     </div>
-  </div>
 `;}
 
 Home.afterRender = async () => {
   Filter.afterRender();
   Pagination.afterRender();
   SearchBar.afterRender();
+
    
 
   orderFunction()
@@ -63,7 +62,7 @@ Home.afterRender = async () => {
     CardToDetail();  
     Wished(); 
     addToCart();
-    shopCart();
+
     // shopping();
    
   });
