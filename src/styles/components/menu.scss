@@ -16,6 +16,7 @@
   height: 80px;
   width: 100%;
   padding-bottom: 16px;
+
   &__nav {
     display: flex;
     align-items: center;
@@ -41,7 +42,9 @@
     transition: all 0.5s;
     box-shadow: 1px -1px 24px var(--color-black-60);
   }
+
   &__item {
+    position: relative;
     margin: 20px 0;
     // height: 200px;
     text-transform: uppercase;
@@ -51,11 +54,11 @@
       display: none;
     }
     &:nth-child(4) {
-      display: none;
+      // display: none;
     }
 
     .item__home {
-      display: inline-block;    
+      display: inline-block;
       img {
         width: 70px;
         height: 20px;
@@ -64,16 +67,94 @@
       }
     }
 
+    &.menu__item--bag {
+      cursor: pointer;
+    }
   }
+
+  .menu__shopping-cart {
+    position: fixed;
+    top: 80px;
+    left: 100%;
+    z-index: 10;
+    width: 400px;
+    padding: 10px;
+    // height: 400px;
+    background-color: rgb(255, 245, 245);
+    transition: 0.25s linear;
+
+    .menu__shopping-title {
+      padding-left: 20px;
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+  }
+  .menu__shopping-cart.is-active {
+    display: inline-block;
+    left: calc(100vw - 400px);
+    transition: 0.25s linear;
+  }
+
+  .menu__shopping-cart-close {
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    background: url('../../assets/icons/cart-close.svg') center/cover no-repeat;
+    cursor: pointer;
+  }
+
+  .menu__shopping-items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    min-height: 200px;
+  }
+
+  .menu__shopping-empty-msg {
+    padding: 20px;
+    font-weight: 500;
+    display: flex;
+    // text-align: center;
+    justify-content: space-between;
+  }
+  .menu__shop-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
   &__link {
     font-weight: bold;
     text-decoration: none;
     color: var(--color-black);
+
+    span {
+      display: inline-block;
+      position: absolute;
+      top: -5px;
+      left: 12px;
+      width: 1rem;
+      // height: 10px;
+      background-color: red;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 0.75rem;
+      color: var(--color-white);
+    }
   }
 }
 
 .menu__icon-item {
   margin-left: 20px;
+  cursor: pointer;
+}
+
+.checkbtn {
+  cursor: pointer;
 }
 
 #check:checked ~ .menu__list {
@@ -120,7 +201,7 @@
     }
     //Escondo los items que iban en el menu hamburger pero en el horizontal no van
     &:nth-child(4) {
-      display: none;
+      // display: none;
     }
     &:nth-child(5) {
       display: none;
