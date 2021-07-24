@@ -1,9 +1,14 @@
 .home {
   &__container {
+    position: relative;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     min-height: 70vh;
+  }
+
+  &__search{
+    width: 100%;
   }
 
   &__controls {
@@ -23,19 +28,25 @@
     .pagination {
       width: 100%;
     }
+
+    // @media (min-width: 768px) {
+    //   .pagination {
+    //     width: auto;
+    //   }
+    // }
   }
 
   &__cards-loading {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: 220px;
     height: 300px;
     margin: 0 auto;
-    background: url("../../assets/icons/loader.svg") center/cover no-repeat;
+    background: url('../../assets/icons/loader.svg') center/cover no-repeat;
 
     img {
-      width: 175px;
+      width: 70%;
     }
 
     @media (min-width: 1280px) {
@@ -66,6 +77,5 @@
     @media (min-width: 1280px) {
       grid-template-columns: repeat(3, minmax(250px, 1fr));
     }
-    
   }
 }

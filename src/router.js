@@ -9,6 +9,7 @@ const renderLayout = (appContainer, layout) => {
   appContainerEl = document.querySelector(appContainer);
   if (layout) {
     appContainerEl.innerHTML = layout.component();
+    if(layout.component.afterRender) layout.component.afterRender();
     mainContentEl = document.querySelector(layout.main);
   } else {
     mainContentEl = appContainerEl;
