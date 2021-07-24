@@ -22,8 +22,15 @@ const Home = () => {
     <div class="home__container">
       ${Filter()}
       <div>
+      <div class="home__search">
+        ${SearchBar()}
+        <div class="search-list">
+          <datalist id="pokemon-list" class="list-elems">
+          </datalist>
+        </div>
+      </div>
         <div class="home__controls">
-          ${SearchBar()}
+
           <div class="filter__icon">
             <img src="${FilterIcon}" alt="Filter icon" />
           </div>
