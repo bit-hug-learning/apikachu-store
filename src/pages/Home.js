@@ -18,19 +18,26 @@ const Home = () => {
   seo({title:"Home"})
   
   return html`
-    <div class="home">
-      ${Hero()}
-      <div class="home__container">
-        ${Filter()}
-        <div>
-          <div class="home__controls">
-            ${SearchBar()}
-            <div class="filter__icon">
-              <img src="${FilterIcon}" alt="Filter icon" />
+  <div class="home">
+    ${Hero()}
+    <div class="home__container">
+      ${Filter()}
+      <div>
+      <div class="home__search">
+        ${SearchBar()}
+        <div class="search-list">
+          <datalist id="pokemon-list" class="list-elems">
+          </datalist>
+        </div>
+      </div>
+        <div class="home__controls">
+
+          <div class="filter__icon">
+            <img src="${FilterIcon}" alt="Filter icon" />
             </div>
             ${Order()} ${Pagination()}
-          </div>
-          <div class="home__cards">
+            </div>
+            <div class="home__cards">
             <div class="home__cards-loading">
               <img src="${loader}" alt="loader animation">
             </div>
@@ -39,6 +46,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    
 `;}
 
 Home.afterRender = async () => {
