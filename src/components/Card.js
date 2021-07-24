@@ -115,7 +115,7 @@ const addToCart = () => {
   cardButton.forEach((element) => {
     element.addEventListener('click', function createAlert() {
       const alertBox = document.createElement('div');
-      alertBox.textContent = 'Added to Cart';
+      alertBox.textContent = 'Adding to Cart...';
 
       element.appendChild(alertBox);
       alertBox.setAttribute('class', 'card__added-to-cart');
@@ -127,7 +127,7 @@ const addToCart = () => {
         }));
         window.localStorage.setItem('cart', JSON.stringify(store.get().cart));
 
-      }, 1000);
+      }, 500);
       element.removeEventListener('click', createAlert);
 
       const buttonDisabled = document.createElement('div');

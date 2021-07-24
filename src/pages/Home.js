@@ -1,5 +1,5 @@
 import Filter from 'components/Filter';
-import Hero from 'components/Hero';
+import { Hero, shopCartHero } from 'components/Hero';
 import Pagination from 'components/Pagination';
 import 'styles/components/home.scss';
 import { Order, orderFunction } from 'components/Order';
@@ -46,7 +46,6 @@ Home.afterRender = async () => {
   Pagination.afterRender();
   SearchBar.afterRender();
 
-   
 
   orderFunction()
   
@@ -62,8 +61,6 @@ Home.afterRender = async () => {
     CardToDetail();  
     Wished(); 
     addToCart();
-
-    // shopping();
    
   });
 

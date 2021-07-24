@@ -10,6 +10,7 @@ import Button from '../components/Button';
 import { getPokemon } from 'utils/fetchData';
 import { ShoppingItem, shopping } from 'components/ShoppingItem';
 import store from 'context/index';
+import {Hero} from './Hero'
 
 /**
  * @param {{number:int}} props
@@ -94,9 +95,7 @@ Menu.afterRender = async () => {
   store.subscribe((state) => {
     const fav = state.favorites.length;
     const cart = state.cart.length;
-    console.log(cart)
 
-    // console.log(`Cuando se asigna el innerHtml wl valor actual es: ${val}`);
     const wishItemValue = document.querySelector('.menu__wish-value');
     wishItemValue.innerHTML = fav;
 
@@ -123,7 +122,6 @@ Menu.afterRender = async () => {
         const item = document.createElement("div");
         item.innerHTML = ShoppingItem(pokemon);
         itemsContainer.appendChild(item);
-  
       })
 
       ShoppingItem.afterRender(counter);
@@ -134,15 +132,18 @@ Menu.afterRender = async () => {
 const shopCart = () => {
   //to open the shopcart modal:
   const shoppingCartButton = document.querySelector('.menu__item--bag');
-  // const shopNowButton = document.querySelector("buton btn btn--buy btn--big");
+  const shopNowButton = document.querySelector(".buton");
+  // console.log(shopNowButton);
   const shoppingModal = document.querySelector('.menu__shopping-cart');
   //to open the shopcart modal:
   const closeIcon = document.querySelector('.menu__shopping-cart-close');
   const continueButton = document.querySelector('.menu__shop-buttons');
 
-  // shoppingCartButton.removeEventListener("popstate", () => {})
-
   shoppingCartButton.addEventListener('click', () => {
+    shoppingModal.classList.toggle('is-active');
+  });
+
+  shopNowButton.addEventListener('click', () => {
     shoppingModal.classList.toggle('is-active');
   });
 
@@ -157,6 +158,8 @@ const shopCart = () => {
       shoppingModal.classList.remove('is-active');
     }
   });
+
 };
+
 
 export { Menu, shopCart };

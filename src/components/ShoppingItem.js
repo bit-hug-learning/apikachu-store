@@ -18,8 +18,11 @@ function ShoppingItem({ id, image, name, price } = {}) {
 
 ShoppingItem.afterRender = async (counter) => {
   const deleteButton = document.querySelectorAll('.shopping__item-delete');
+  const initialMsg = document.querySelector('.menu__shopping-empty-msg');
 
   const containers = document.querySelectorAll('.shopping__item-container');
+
+
   deleteButton.forEach((element) => {
     element.addEventListener('click', function removeItem() {
       element.parentNode.remove();
@@ -31,7 +34,9 @@ ShoppingItem.afterRender = async (counter) => {
       }))
 
       window.localStorage.setItem('cart', JSON.stringify(store.get().cart));
-      // containers.length == 0 ? console.log('vacio') : '';
+      console.log(containers);
+      console.log("containers length: "+containers.length);
+      containers.length == 1 ? initialMsg.innerHTML = "Your cart is empty" : '';
     });
   });
 };

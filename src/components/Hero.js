@@ -22,11 +22,11 @@ function Hero() {
             <h1>Pikachu</h1>
           </div>
           <div class="hero__cta">
-            <span class="hero__price">$0.60</span><button class="btn btn--buy btn--big">Shop now</button> <img src="${pokeball}" style="transform: rotate(15deg)"/>
+            <span class="hero__price">$0.60</span><button class="btn-shop-now btn btn--buy btn--big">Shop now</button> <img src="${pokeball}" style="transform: rotate(15deg)"/>
           </div>
         </div>
     </div>
   `;
 }
 
-export default Hero;
+export { Hero };
