@@ -6,14 +6,15 @@ function Order() {
     <div class="orderpagination">
       <div class="dropdown">
         <button class="order-button">
-          <p class="order-button__text" id="order-label">Order</p>
+          <p class="order-button__text" id="order-label">Order by :</p>
           <span class="order-button__icon"></span>
         </button>
         <div class="dropdown-content">
-          <a class="dropdown-content__min-max">Min-Max</a>
-          <a class="dropdown-content__max-min">Max-Min</a>
+          <a class="dropdown-content__min-max">Price: Min-Max</a>
+          <a class="dropdown-content__max-min">Price: Max-Min</a>
           <a class="dropdown-content__a-z">A - Z</a>
           <a class="dropdown-content__z-a">Z - A</a>
+          <a class="dropdown-content__by-id">Id: Min-Max</a>
         </div>
       </div>
     </div>
@@ -41,7 +42,7 @@ const orderFunction = () => {
       const { filteredPokemons } = store.get()
     
       var fn = (a, b) => {
-        return (className == "min-max" ? a.price - b.price : className == "max-min" ? b.price - a.price : className == "a-z" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name))
+        return (className == "min-max" ? a.price - b.price : className == "max-min" ? b.price - a.price : className == "a-z" ? a.name.localeCompare(b.name) : className == "z-a" ? b.name.localeCompare(a.name) : a.id - b.id )
       }
 
       store.set((state) => {
@@ -55,10 +56,11 @@ const orderFunction = () => {
     
   }
 
-  orderItem("min-max","Min-Max");
-  orderItem("max-min","Max-Min");
-  orderItem("a-z","A-Z");
-  orderItem("z-a","Z-A");
+  orderItem("min-max","Price: Min-Max");
+  orderItem("max-min","Price: Max-Min");
+  orderItem("a-z","A - Z");
+  orderItem("z-a","Z - A");
+  orderItem("by-id","Id: Min-Max");
 }
 
 

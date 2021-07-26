@@ -12,6 +12,7 @@ import {Card, Wished, CardToDetail, addToCart}  from '../components/Card';
 import FilterIcon from '../assets/icons/filter.png';
 import loader from '../assets/images/inner-loader.png'
 import seo from 'utils/seo';
+import HeroStories from 'stories/Hero.stories';
 
 
 const Home = () => {
@@ -53,6 +54,7 @@ Home.afterRender = async () => {
   Filter.afterRender();
   Pagination.afterRender();
   SearchBar.afterRender();
+  Hero.afterRender();
 
 
   orderFunction()
@@ -69,6 +71,8 @@ Home.afterRender = async () => {
     CardToDetail();  
     Wished(); 
     addToCart();
+    // detailButtons();
+    // addToCartFromDetail();
    
   });
 

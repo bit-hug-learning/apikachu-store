@@ -16,7 +16,7 @@ function ShoppingItem({ id, image, name, price } = {}) {
   `;
 }
 
-ShoppingItem.afterRender = async (counter) => {
+ShoppingItem.afterRender = async () => {
   const deleteButton = document.querySelectorAll('.shopping__item-delete');
   const initialMsg = document.querySelector('.menu__shopping-empty-msg');
 

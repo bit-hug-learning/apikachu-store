@@ -109,7 +109,7 @@
     position: relative;
   }
 
-  &__added-to-cart {
+  &__alert-added-to-cart {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,7 +120,7 @@
     height: 50px;
     background-color: var(--color-yellow);
     border-radius: 4px;
-    animation: vanish .5s linear;
+    animation: vanish .51s linear;
     pointer-events: none;
   }
 

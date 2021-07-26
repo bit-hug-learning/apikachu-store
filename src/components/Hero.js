@@ -1,7 +1,7 @@
 import 'styles/components/hero.scss';
 import imageMobile from 'assets/images/heropika320.png';
 import imageTablet from 'assets/images/heropika550.png';
-import pokeball from 'assets/images/pokeball.png';
+import pokeball from 'assets/images/pokeball_pikachu.png';
 
 function Hero() {
   return html`
@@ -13,7 +13,7 @@ function Hero() {
         <div class="hero__image">
           <picture>
             <source srcset="${imageTablet}" media="(min-width: 768px)" width="550px" height="360"/>
-            <img src="${imageMobile}" alt="pikachu hero image" width="320px" height="309"/>
+            <img src="${imageMobile}" alt="pikachu hero image" width="320" height="309"/>
           </picture>
         </div>
         <div class="hero__text">       
@@ -22,11 +22,24 @@ function Hero() {
             <h1>Pikachu</h1>
           </div>
           <div class="hero__cta">
-            <span class="hero__price">$0.60</span><button class="btn-shop-now btn btn--buy btn--big">Shop now</button> <img src="${pokeball}" style="transform: rotate(15deg)"/>
+            <span class="hero__price">$0.60</span><button class="btn-shop-pikachu btn btn--buy btn--big" dataset-pokemonid = "25">Shop now</button> <img src="${pokeball}" width="50" height="50" style="transform: rotate(15deg)"/>
           </div>
         </div>
     </div>
   `;
 }
+
+
+
+Hero.afterRender = () => {
+  const shopNowButton = document.querySelector(".btn-shop-pikachu");
+  const shoppingModal = document.querySelector('.menu__shopping-cart');
+  let pikacount = 0;
+
+  shopNowButton.addEventListener('click', () => {})
+
+  
+}
+
 
 export { Hero };

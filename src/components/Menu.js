@@ -5,12 +5,10 @@ import WishIcon from '../assets/icons/wish_icon.svg';
 import BagIcon from '../assets/icons/bag_icon.svg';
 import VectorIcon from '../assets/icons/Vector.svg';
 import HamburgerIcon from '../assets/icons/hamburger.svg';
-import { counter } from '../components/Card';
 import Button from '../components/Button';
-import { getPokemon } from 'utils/fetchData';
-import { ShoppingItem, shopping } from 'components/ShoppingItem';
+import { ShoppingItem } from 'components/ShoppingItem';
 import store from 'context/index';
-import {Hero} from './Hero'
+
 
 /**
  * @param {{number:int}} props
@@ -66,9 +64,9 @@ function Menu({ number }) {
             </a>
           </li>
           <li class="menu__item menu__item--bag">
-            <span class="menu__icon"><img src=${BagIcon} alt="Bag icon" /></span
+            <span class="menu__icon"><img src=${BagIcon} alt="Cart icon" /></span
             ><a class="menu__link"
-              >My Bag <span class="menu__bag-value">${number} </span>
+              >My Cart <span class="menu__bag-value">${number} </span>
             </a>
           </li>
           <li class="menu__item"><a class="menu__link">Shop</a></li>
@@ -78,7 +76,7 @@ function Menu({ number }) {
         </ul>
         <div class="menu__icons-container">
           <img class="menu__icon-item" src=${WishIcon} alt="User icon" />
-          <img class="menu__icon-item" src=${BagIcon} alt="User icon" />
+          <img class="menu__icon-item menu__icon-bag" src=${BagIcon} alt="User icon" />
           <img class="menu__icon-item" src=${VectorIcon} alt="User icon" />
         </div>
       </nav>
@@ -121,17 +119,21 @@ Menu.afterRender = async () => {
       pokemons.forEach(pokemon=>{
         const item = document.createElement("div");
         item.innerHTML = ShoppingItem(pokemon);
+        // console.log(pokemon);
         itemsContainer.appendChild(item);
       })
-
-      ShoppingItem.afterRender(counter);
+              
+      ShoppingItem.afterRender();
     }
   });
 };
 
-const shopCart = () => {
+const openShopCart = () => {
   //to open the shopcart modal:
   const shoppingCartButton = document.querySelector('.menu__item--bag');
+  
+  const shoppingCartIconButton = document.querySelector('.menu__icon-bag');
+
   const shopNowButton = document.querySelector(".buton");
   // console.log(shopNowButton);
   const shoppingModal = document.querySelector('.menu__shopping-cart');
@@ -140,6 +142,10 @@ const shopCart = () => {
   const continueButton = document.querySelector('.menu__shop-buttons');
 
   shoppingCartButton.addEventListener('click', () => {
+    shoppingModal.classList.toggle('is-active');
+  });
+
+  shoppingCartIconButton.addEventListener('click', () => {
     shoppingModal.classList.toggle('is-active');
   });
 
@@ -162,4 +168,4 @@ const shopCart = () => {
 };
 
 
-export { Menu, shopCart };
+export { Menu, openShopCart };

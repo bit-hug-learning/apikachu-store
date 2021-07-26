@@ -1,5 +1,5 @@
 import Footer from './Footer';
-import { Menu, shopCart } from './Menu';
+import { Menu, openShopCart } from './Menu';
 import { Hero, shopCartHero } from './Hero';
 
 const Layout = () => html`
@@ -10,7 +10,7 @@ const Layout = () => html`
 
 Layout.afterRender = () => {
   Menu.afterRender();
-  shopCart();
+  openShopCart();
 
 }
 
