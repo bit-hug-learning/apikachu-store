@@ -2,7 +2,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  width: calc(100% - 40px);
+  margin: 0 20px;
   // @media (min-width: 768px) {
   //   width: 665px;
   // }
