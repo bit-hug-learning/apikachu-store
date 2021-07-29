@@ -2,8 +2,14 @@ import 'styles/components/hero.scss';
 import imageMobile from 'assets/images/heropika320.png';
 import imageTablet from 'assets/images/heropika550.png';
 import pokeball from 'assets/images/pokeball_pikachu.png';
+import createAlert from 'utils/createAlert';
+import store from 'context/index';
 
 function Hero() {
+
+  const { cart } = store.get();
+  const isCart = cart.includes(25);
+
   return html`
     <div class="banner">
     10% OFF your first purchase!
@@ -22,7 +28,7 @@ function Hero() {
             <h1>Pikachu</h1>
           </div>
           <div class="hero__cta">
-            <span class="hero__price">$0.60</span><button class="btn-shop-pikachu btn btn--buy btn--big" dataset-pokemonid = "25">Shop now</button> <img src="${pokeball}" width="50" height="50" style="transform: rotate(15deg)"/>
+            <span class="hero__price">$0.60</span><button class="btn-shop-pikachu btn btn--buy btn--big" data-pokemonid="25" ${isCart ? 'disabled' : ''}>Shop now</button> <img src="${pokeball}" width="50" height="50" style="transform: rotate(15deg)"/>
           </div>
         </div>
     </div>
@@ -36,9 +42,13 @@ Hero.afterRender = () => {
   const shoppingModal = document.querySelector('.menu__shopping-cart');
   let pikacount = 0;
 
-  shopNowButton.addEventListener('click', () => {})
+  shopNowButton.addEventListener('click', createAlert(shopNowButton))
 
-  
+  store.subscribe(() => {
+    const { cart } = store.get();
+    const isCart = cart.includes(25);
+    shopNowButton.disabled = isCart;
+  })
 }
 
 

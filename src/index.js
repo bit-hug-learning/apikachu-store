@@ -4,6 +4,7 @@ import Layout from 'components/Layout';
 import NotFound from 'pages/NotFound';
 import router from './router';
 import Home from './pages/Home';
+import 'context/index';
 
 const routes = [
   { path: '/', component: Home },

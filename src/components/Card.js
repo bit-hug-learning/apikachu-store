@@ -4,6 +4,7 @@ import Button from './Button';
 import router from '../router';
 import store from 'context/index';
 import { Menu } from './Menu';
+import createAlert from 'utils/createAlert';
 
 const idFormat = (id) => {
   if(id<10){
@@ -122,23 +123,7 @@ const addToCart = () => {
   const cardButton = document.querySelectorAll('.card__button');
 
   cardButton.forEach((element) => {
-    element.addEventListener('click', function createAlert() {
-      const alertBox = document.createElement('div');
-      alertBox.textContent = 'Adding to Cart...';
-    
-      element.appendChild(alertBox);
-      alertBox.setAttribute('class', 'card__alert-added-to-cart');
-      setTimeout(() => {
-        element.removeChild(alertBox);
-        store.set((state) => ({
-          ...state,
-          cart: [...state.cart, parseInt(element.dataset.pokemonid)],
-        }));
-        window.localStorage.setItem('cart', JSON.stringify(store.get().cart));
-    
-      }, 500);
-
-    });
+    element.addEventListener('click', createAlert(element));
   })    
 };
 

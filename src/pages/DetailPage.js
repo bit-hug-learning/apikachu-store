@@ -16,6 +16,9 @@ const DetailPage = async () => {
 DetailPage.afterRender = async () => {
   pokedexButtons();
   detailButtons();
+
+  const pokemons = await getPokemonByRange(1, 151);
+  setAllPokemons(pokemons);
 }
 
 export default DetailPage;

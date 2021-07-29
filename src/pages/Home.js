@@ -73,11 +73,7 @@ Home.afterRender = async () => {
     addToCart();
     // detailButtons();
     // addToCartFromDetail();
-   
   });
-
-  const pokemons = await getPokemonByRange(1, 151);
-  setAllPokemons(pokemons);
 };
 
 
