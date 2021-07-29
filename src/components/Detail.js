@@ -7,8 +7,10 @@ import pokedexHingeV from '../assets/images/pokedex_hinge-v.svg';
 import leftArrow from '../assets/icons/leftArrow.svg';
 import pokemonTypes from '../utils/pokemonTypes';
 import Button from '../components/Button';
-import router from 'router';
-
+import router, { getParams } from 'router';
+import { idFormat } from './Card'
+import createAlert from 'utils/createAlert';
+import store from 'context/index';
 
 
 function Stats(stats) {
@@ -18,6 +20,9 @@ function Stats(stats) {
 }
 
 function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
+  const { cart } = store.get();
+  const isCart = cart.includes(id);
+
   return html`
     <div class="detail">
       <div class="pokedex">
@@ -38,7 +43,7 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
 
             <div class="pokedex__frame-container name">
               <div class="pokedex__name">
-                <h2># ${id < 10 ? `00${id}` : id} ${name.split('')[0].toUpperCase().concat(name.slice(1))}</h2>
+                <h2># ${idFormat(`${id}`)} ${name.split('')[0].toUpperCase().concat(name.slice(1))}</h2>
               </div>
             </div>
 
@@ -48,7 +53,7 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
                 <div class="pokedex__container-buttons"></div>
               </button>
               <div class="pokedex__frame-container">
-                <div class="pokedex__price">$ ${weight / 100}</div>
+                <div class="pokedex__price">$ ${(weight / 100).toFixed(2)}</div>
               </div>
               <button class="pokedex__button-right">
                 <img src="${leftArrow}" alt="right button" />
@@ -94,8 +99,8 @@ function Detail({ image, id, name, types = [], stats, weight, height } = {}) {
       </div>
 
       <div class="buttons">
-        ${Button('Add to cart', 'btn btn--add', true)}
-        ${Button('Shop now', 'btn btn--buy', true)}
+        ${Button('Add to cart', 'btn btn--add btn-add-detail', true, isCart, `data-pokemonid="${id}"`)}
+        ${Button('Shop now', 'btn btn--buy btn-shop-detail', true)}
       </div>
 
       <a class="back-to-home" href="/" data-link><span></span>Back</a>
@@ -125,6 +130,27 @@ const pokedexButtons = () => {
   buttons("leftButton", "pokedex__button-left");
   buttons("rightButton", "pokedex__button-right");
 
+} 
+
+
+const detailButtons = () => {
+
+  const addButton = document.querySelector(".btn-add-detail");
+
+  const shopButton = document.querySelector(".btn-shop-detail");
+  const shoppingModal = document.querySelector('.menu__shopping-cart');
+
+  shopButton.addEventListener('click', () => {
+    shoppingModal.classList.toggle('is-active');
+  });
+
+  addButton.addEventListener("click", createAlert(addButton))
+
+  store.subscribe(({cart}) => {
+    const isCart = cart.includes(parseInt(router.getParams().pokemonId));
+    addButton.disabled = isCart;
+  })
+
 }
 
-export { Detail, pokedexButtons };
+export { Detail, pokedexButtons, detailButtons };

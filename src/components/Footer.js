@@ -23,7 +23,7 @@ function Footer() {
         </a>
       </div>
       <div class="footer__social">
-        <a href="#" class="footer__social-circle"
+        <a href="https://www.youtube.com/channel/UCi3caZVvP0OLlHtBrl7ursA" class="footer__social-circle"
           ><img src="${YoutubeIcon}" alt=""
         /></a>
         <a href="https://github.com/bit-hug-learning" class="footer__social-circle"

@@ -14,4 +14,5 @@ export default function seo({ title, description } = {}) {
   }
 
   metaDescription.content = description || DEF_DESC;
+
 }

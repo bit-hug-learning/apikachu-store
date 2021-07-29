@@ -118,6 +118,14 @@
     @include ripple(#fff);
   }
 
+  &-shop-pikachu {
+    color: var(--color-black-5);
+    background: #393f3a;
+    border: 3px solid #fffb00;
+    box-shadow: 0px 4px 4px rgba(57, 60, 63, 0.25);
+    @include ripple(#fffb00);
+  }
+
   &:disabled {
     background: var(--color-black-60);
     color: var(--color-black-5);

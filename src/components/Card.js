@@ -3,11 +3,20 @@ import pokemonTypes from '../utils/pokemonTypes';
 import Button from './Button';
 import router from '../router';
 import store from 'context/index';
-import Layout from './Layout';
 import { Menu } from './Menu';
-import { ShoppingItem, shopping } from 'components/ShoppingItem';
+import createAlert from 'utils/createAlert';
 
-function Card({ image, id, name, types = [], weight } = {}) {
+const idFormat = (id) => {
+  if(id<10){
+      return "00" + id;
+  } else if(id < 100) {
+      return "0" + id;
+    } else {
+      return id;
+    }
+}
+
+function Card({ image, id, name, types = [], price } = {}) {
   const { favorites, cart } = store.get();
   const isClicked = favorites.includes(id);
   const isCart = cart.includes(id);
@@ -28,7 +37,7 @@ function Card({ image, id, name, types = [], weight } = {}) {
       <div class="card__body">
         <div class="card__primary-info">
           <h2 class="card__name">
-            <span class="card__id">${id < 10 ? `00${id}` : id}</span>
+            <span class="card__id">${idFormat(`${id}`)}</span>
             ${name.split('')[0].toUpperCase().concat(name.slice(1))}
           </h2>
           <span class="card__types">
@@ -48,7 +57,7 @@ function Card({ image, id, name, types = [], weight } = {}) {
               : ''}
           </span>
         </div>
-        <div class="card__price">$ ${weight / 100}</div>
+        <div class="card__price">$ ${price.toFixed(2)}</div>
       </div>
       <div
         class="card__button"
@@ -109,37 +118,13 @@ const CardToDetail = () => {
   });
 };
 
+
 const addToCart = () => {
   const cardButton = document.querySelectorAll('.card__button');
 
   cardButton.forEach((element) => {
-    element.addEventListener('click', function createAlert() {
-      const alertBox = document.createElement('div');
-      alertBox.textContent = 'Added to Cart';
-
-      element.appendChild(alertBox);
-      alertBox.setAttribute('class', 'card__added-to-cart');
-      setTimeout(() => {
-        element.removeChild(alertBox);
-        store.set((state) => ({
-          ...state,
-          cart: [...state.cart, parseInt(element.dataset.pokemonid)],
-        }));
-        window.localStorage.setItem('cart', JSON.stringify(store.get().cart));
-
-      }, 1000);
-      element.removeEventListener('click', createAlert);
-
-      const buttonDisabled = document.createElement('div');
-      buttonDisabled.innerHTML = Button(
-        'Already added to cart',
-        'btn btn--add',
-        false,
-        true
-      );
-      element.children[0].replaceWith(buttonDisabled);
-    });
-  });
+    element.addEventListener('click', createAlert(element));
+  })    
 };
 
-export { Card, Wished, CardToDetail, addToCart, counter };
+export { Card, Wished, CardToDetail, addToCart, counter, idFormat };
