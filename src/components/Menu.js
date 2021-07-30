@@ -70,9 +70,6 @@ function Menu({ number }) {
             </a>
           </li>
           <li class="menu__item"><a class="menu__link">Shop</a></li>
-          <li class="menu__item">
-            <a class="menu__link">Hot sell</a>
-          </li>
         </ul>
         <div class="menu__icons-container">
           <img class="menu__icon-item" src=${WishIcon} alt="User icon" />
@@ -82,6 +79,7 @@ function Menu({ number }) {
       </nav>
       <div class="menu__secondary">
         <p class="menu__secondary-text">Store</p>
+        <p class="menu__secondary-text">Hot Sell</p>
       </div>
       <button class="buton btn btn--buy btn--big">Shop Now</button>
     </header>
