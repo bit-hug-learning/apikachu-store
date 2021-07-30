@@ -82,7 +82,6 @@ function Menu({ number }) {
       </nav>
       <div class="menu__secondary">
         <p class="menu__secondary-text">Store</p>
-        <p class="menu__secondary-text">Hot sell</p>
       </div>
       <button class="buton btn btn--buy btn--big">Shop Now</button>
     </header>
@@ -91,6 +90,7 @@ function Menu({ number }) {
 
 Menu.afterRender = async () => {
   store.subscribe((state) => {
+    console.log(state);
     const fav = state.favorites.length;
     const cart = state.cart.length;
 
@@ -125,7 +125,7 @@ Menu.afterRender = async () => {
               
       ShoppingItem.afterRender();
     }
-  });
+  }, false);
 };
 
 const openShopCart = () => {

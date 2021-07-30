@@ -13,8 +13,6 @@ const Layout = () => html`
 Layout.afterRender = async () => {
   Menu.afterRender();
   openShopCart();
-  const pokemons = await getPokemonByRange(1, 151);
-  setAllPokemons(pokemons);
 }
 
 export default Layout;

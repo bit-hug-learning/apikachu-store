@@ -1,6 +1,7 @@
 import { Detail, pokedexButtons, detailButtons } from 'components/Detail';
+import { setAllPokemons } from 'context/actions';
 import { getParams } from 'router';
-import { getPokemon } from 'utils/fetchData';
+import { getPokemon, getPokemonByRange } from 'utils/fetchData';
 import seo from 'utils/seo';
 
 

@@ -10,12 +10,11 @@ export default function createAlert(element) {
     alertBox.setAttribute('class', 'card__alert-added-to-cart');
     setTimeout(() => {
       element.removeChild(alertBox);
-      store.set((state) => ({
-        ...state,
-        cart: [...state.cart, parseInt(element.dataset.pokemonid)],
-      }));
-      window.localStorage.setItem('cart', JSON.stringify(store.get().cart));
-
     }, 500);
+    store.set((state) => ({
+      ...state,
+      cart: [...state.cart, parseInt(element.dataset.pokemonid)],
+    }));
+    window.localStorage.setItem('cart', JSON.stringify(store.get().cart));
   }
 }
